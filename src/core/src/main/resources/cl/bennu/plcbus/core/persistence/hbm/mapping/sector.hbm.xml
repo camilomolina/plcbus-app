@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="cl.bennu.plcbus.common.domain.Sector" table="zona" lazy="false">
+        <id name="id" column="zona_id">
+            <generator class="native"/>
+        </id>
+        <many-to-one name="level" column="nvel_id" not-null="true" fetch="join" />
+        <property name="name" column="zona_nombre"/>
+
+        <property name="active" column="zona_activo"/>
+        <property name="creatorUser" column="zona_usuario_creador"/>
+        <property name="create" column="zona_fecha_creacion"/>
+        <property name="updateUser" column="zona_usuario_actualizador"/>
+        <property name="update" column="zona_fecha_actualizacion"/>
+    </class>
+
+</hibernate-mapping>

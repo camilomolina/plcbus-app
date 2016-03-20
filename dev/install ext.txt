@@ -1,0 +1,2 @@
+set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_21
+mvn install:install-file -Dfile=../lib/db4o-8.0.249.16098-all-java5.jar -DgroupId=db4o -DartifactId=db4o -Dversion=8.0 -Dpackaging=jar

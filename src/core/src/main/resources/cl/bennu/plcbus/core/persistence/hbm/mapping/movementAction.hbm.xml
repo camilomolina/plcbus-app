@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="cl.bennu.plcbus.common.domain.MovementAction" table="accion_movimiento" lazy="false">
+        <id name="id" column="acmv_id">
+            <generator class="native"/>
+        </id>
+        <many-to-one name="device" column="dpst_id" not-null="false" fetch="join" />
+        <property name="reason" column="prgm_motivo" />
+        <property name="movementTypeEnum" column="tpmv_id" type="movementTypeEnum"/>
+        <bag name="movementActionDetailList" fetch="subselect" lazy="false" inverse="false" cascade="none">
+            <key column="acmv_id" update="false" />
+            <one-to-many class="cl.bennu.plcbus.common.domain.MovementActionDetail" />
+        </bag>
+        <property name="start" column="acmv_desde" />
+        <property name="end" column="acmv_hasta" />
+        <property name="active" column="acmv_activo" />
+
+        <property name="creatorUser" column="acmv_usuario_creador"/>
+        <property name="create" column="acmv_fecha_creacion"/>
+        <property name="updateUser" column="acmv_usuario_actualizador"/>
+        <property name="update" column="acmv_fecha_actualizacion"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="Metro UI CSS">
+    <meta name="author" content="Sergey Pimenov">
+    <meta name="keywords" content="windows 8, modern style, Metro UI, style, modern, css, framework">
+
+    <link href="css/modern.css" rel="stylesheet">
+    <link href="css/modern-responsive.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" type="text/css">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/assets/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/assets/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/assets/moment.js"></script>
+    <script type="text/javascript" src="js/assets/moment_langs.js"></script>
+
+    <script type="text/javascript" src="js/modern/dropdown.js"></script>
+    <script type="text/javascript" src="js/modern/accordion.js"></script>
+    <script type="text/javascript" src="js/modern/buttonset.js"></script>
+    <script type="text/javascript" src="js/modern/carousel.js"></script>
+    <script type="text/javascript" src="js/modern/input-control.js"></script>
+    <script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+    <script type="text/javascript" src="js/modern/rating.js"></script>
+    <script type="text/javascript" src="js/modern/slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-drag.js"></script>
+    <script type="text/javascript" src="js/modern/calendar.js"></script>
+
+    <title>Metro UI CSS</title>
+	
+	    <script language="JavaScript">
+			var hostCamera1 = "192.168.2.109:10801"
+			var cameraW;
+			function camera() {
+				document.getElementById('id1').style.display = "block";
+				cameraW = window.setInterval("refreshCamera()", 100);
+			}
+			
+			function cameraOff() {
+				document.getElementById('id1').style.display = "none";
+				window.clearInterval(cameraW)
+			}
+			
+			function refreshCamera(){		  
+				var ctx = document.getElementById('camera_01').getContext('2d');
+				var img = new Image();
+				img.src = "http://"+hostCamera1+"/snapshot.jpg?user=admin&resolution=1&time=" + new Date().getTime();
+				img.onload = function() {
+					ctx.drawImage(img, 0, 0);
+				};
+			};
+
+			function cameraLeft(camera) {
+				$.ajax({
+                url: "http://"+hostCamera1+"/decoder_control.cgi?user=admin&command=4",
+                method: "POST",
+				dataType: 'jsonp'
+				});
+			}
+
+			function cameraUp(camera) {
+				$.ajax({
+                url: "http://"+hostCamera1+"/decoder_control.cgi?user=admin&command=2",
+                method: "POST",
+				dataType: 'jsonp'
+				});
+			}
+
+			function cameraDown(camera) {
+				$.ajax({
+                url: "http://"+hostCamera1+"/decoder_control.cgi?user=admin&command=0",
+                method: "POST",
+				dataType: 'jsonp'
+				});
+			}
+
+			function cameraRight(camera) {
+				$.ajax({
+                url: "http://"+hostCamera1+"/decoder_control.cgi?user=admin&command=6",
+                method: "POST",
+				dataType: 'jsonp'
+				});
+			}
+			
+			function cameraCommandOff(camera) {
+				$.ajax({
+                url: "http://"+hostCamera1+"/decoder_control.cgi?user=admin&command=1",
+                method: "POST",
+				dataType: 'jsonp'
+				});
+			}
+						
+		</script>
+</head>
+<body class="metrouicss" onload="prettyPrint()">
+
+<div class="page">
+<div class="nav-bar">
+    <div class="nav-bar-inner padding10">
+        <span class="pull-menu"></span>
+
+        <a href="/"><span class="element brand">
+            <img class="place-left" src="images/logo32.png" style="height: 20px"/>
+            Metro UI CSS <small><?= include("version.phtml")?></small>
+        </span></a>
+
+        <div class="divider"></div>
+
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li data-role="dropdown">
+                <a href="#">Scaffolding</a>
+                <ul class="dropdown-menu">
+                    <li><a href="global.html">Global styles</a></li>
+                    <li><a href="layout.html">Layouts and templates</a></li>
+                    <li><a href="grid.html">Grid system</a></li>
+                    <li class="divider"></li>
+                    <li><a href="responsive.html">Responsive design</a>
+                    </li>
+                </ul>
+            </li>
+            <li data-role="dropdown"><a href="#">Base CSS</a>
+                <ul class="dropdown-menu">
+                    <li><a href="typography.html">Typography</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="images.html">Images</a></li>
+                    <li class="divider"></li>
+                    <li><a href="icons.html">Icons</a></li>
+                </ul>
+            </li>
+            <li data-role="dropdown"><a href="#">Components</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tiles.html">Tiles</a></li>
+                    <li><a href="menus.html">Menu and Navigation</a></li>
+                    <li><a href="sidebar.html">Sidebar</a></li>
+                    <li><a href="pagecontrol.html">Page control</a></li>
+                    <li><a href="accordion.html">Accordion</a></li>
+                    <li><a href="buttons-set.html">Buttons set</a></li>
+                    <li><a href="rating.html">Rating</a></li>
+                    <li><a href="progress.html">Progress bars</a></li>
+                    <li><a href="carousel.html">Carousel</a></li>
+                    <li><a href="listview.html">List view</a></li>
+                    <li><a href="slider.html">Slider</a></li>
+                    <li><a href="dialog.html">Dialog box</a></li>
+                    <li><a href="ajax.html">Ajax reinit</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="pagelist.html">Calendar</a></li>
+                    <li class="divider"></li>
+                    <li><a href="notices.html">Notices and Replies</a></li>
+                    <li class="divider"></li>
+                    <li><a href="cards.html">Bonus - Deck of Cards</a></li>
+                </ul>
+            </li>
+
+            <li><a href="https://github.com/olton/Metro-UI-CSS">Source</a></li>
+        </ul>
+
+    </div>
+</div>
+</div>
+
+
+
+    <style>
+        #icons-list li {
+            font-size: 18px;
+            line-height: 32px;
+        }
+    </style>
+
+    <div class="page secondary">
+        <div class="page-header">
+            <div class="page-header-content">
+                <h1>Icons<small>demo</small></h1>
+                <a href="/" class="back-button big page-back"></a>
+            </div>
+        </div>
+
+        <div class="page-region">
+            <div class="page-region-content">
+                <div class="span10">
+                   		
+					<div class="dialog" id="id1" style="display: none;position:absolute;top:30%;left:30%;background-color:rgba(255, 255, 255, 255);">
+
+						<canvas id='camera_01' width='320px' height='240px' style='border:1px solid #d3d3d3'  >
+							
+						</canvas>
+						<br/>
+						
+						    <div class="toolbar ">
+							<button onmousedown="cameraLeft('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								<i class="icon-arrow-left"  ></i>
+							</button>
+							<button onmousedown="cameraUp('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								<i class="icon-arrow-up"  ></i>
+							</button>
+							<button onmousedown="cameraDown('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								<i class="icon-arrow-down"  ></i>
+							</button>
+							<button onmousedown="cameraRight('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								<i class="icon-arrow-right"  ></i>
+							</button>
+
+							<button class="mini" onmousedown="cameraRight('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								1
+							</button>
+							<button class="mini" onmousedown="cameraRight('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								2
+							</button>
+							<button class="mini" onmousedown="cameraRight('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								3
+							</button>
+							<button class="mini" onmousedown="cameraRight('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								4
+							</button>
+							<button class="mini" onmousedown="cameraRight('camera_01')" onmouseup="cameraCommandOff('camera_01');">
+								-
+							</button>
+
+							<button  onclick="cameraOff('camera_01');" >
+								<i class="icon-cancel red" onclick="cameraOff('camera_01');"></i>
+							</button>
+							</div>
+
+
+						
+					</div>
+				
+					<input type="button" value="camara" onclick="camera()"/>
+					
+				</div>
+
+            </div>
+        </div>
+    </div>
+	<div class="page">
+        <div class="nav-bar">
+            <div class="nav-bar-inner padding10">
+                <span class="element">
+                    2012-2013, Metro UI CSS &copy; by <a class="fg-color-white" href="mailto:sergey@pimenov.com.ua">Sergey Pimenov</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+	
+    <script type="text/javascript" src="js/assets/github.info.js"></script>
+    <script type="text/javascript" src="js/assets/google-analytics.js"></script>
+    <script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/sharrre/jquery.sharrre-1.3.4.min.js"></script>
+
+  
+    </body>
+</html>
+
+
+

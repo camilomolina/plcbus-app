@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <typedef name="deviceTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.DeviceTypeEnum</param>
+    </typedef>
+
+    <typedef name="dayEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.DayEnum</param>
+    </typedef>
+
+    <typedef name="programmingTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.ProgrammingTypeEnum</param>
+    </typedef>
+
+    <typedef name="queueEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.QueueEnum</param>
+    </typedef>
+
+    <typedef name="synchronizedEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.SynchronizedEnum</param>
+    </typedef>
+
+    <typedef name="weatherYahooTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.WeatherYahooEnum</param>
+    </typedef>
+
+    <typedef name="eventTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.EventTypeEnum</param>
+    </typedef>
+
+    <typedef name="movementTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.MovementTypeEnum</param>
+    </typedef>
+
+    <typedef name="movementActionTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.MovementActionTypeEnum</param>
+    </typedef>
+
+    <typedef name="cameraTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.CameraTypeEnum</param>
+    </typedef>
+
+</hibernate-mapping>
