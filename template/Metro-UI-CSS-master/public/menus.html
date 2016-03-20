@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="Metro UI CSS">
+    <meta name="author" content="Sergey Pimenov">
+    <meta name="keywords" content="windows 8, modern style, Metro UI, style, modern, css, framework">
+
+    <link href="css/modern.css" rel="stylesheet">
+    <link href="css/modern-responsive.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" type="text/css">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/assets/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/assets/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/assets/moment.js"></script>
+    <script type="text/javascript" src="js/assets/moment_langs.js"></script>
+
+    <script type="text/javascript" src="js/modern/dropdown.js"></script>
+    <script type="text/javascript" src="js/modern/accordion.js"></script>
+    <script type="text/javascript" src="js/modern/buttonset.js"></script>
+    <script type="text/javascript" src="js/modern/carousel.js"></script>
+    <script type="text/javascript" src="js/modern/input-control.js"></script>
+    <script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+    <script type="text/javascript" src="js/modern/rating.js"></script>
+    <script type="text/javascript" src="js/modern/slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-drag.js"></script>
+    <script type="text/javascript" src="js/modern/calendar.js"></script>
+
+    <title>Metro UI CSS</title>
+</head>
+<body class="metrouicss" onload="prettyPrint()">
+
+<div class="page">
+<div class="nav-bar">
+    <div class="nav-bar-inner padding10">
+        <span class="pull-menu"></span>
+
+        <a href="/"><span class="element brand">
+            <img class="place-left" src="images/logo32.png" style="height: 20px"/>
+            Metro UI CSS <small><?= include("version.phtml")?></small>
+        </span></a>
+
+        <div class="divider"></div>
+
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li data-role="dropdown">
+                <a href="#">Scaffolding</a>
+                <ul class="dropdown-menu">
+                    <li><a href="global.html">Global styles</a></li>
+                    <li><a href="layout.html">Layouts and templates</a></li>
+                    <li><a href="grid.html">Grid system</a></li>
+                    <li class="divider"></li>
+                    <li><a href="responsive.html">Responsive design</a>
+                    </li>
+                </ul>
+            </li>
+            <li data-role="dropdown"><a href="#">Base CSS</a>
+                <ul class="dropdown-menu">
+                    <li><a href="typography.html">Typography</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="images.html">Images</a></li>
+                    <li class="divider"></li>
+                    <li><a href="icons.html">Icons</a></li>
+                </ul>
+            </li>
+            <li data-role="dropdown"><a href="#">Components</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tiles.html">Tiles</a></li>
+                    <li><a href="menus.html">Menu and Navigation</a></li>
+                    <li><a href="sidebar.html">Sidebar</a></li>
+                    <li><a href="pagecontrol.html">Page control</a></li>
+                    <li><a href="accordion.html">Accordion</a></li>
+                    <li><a href="buttons-set.html">Buttons set</a></li>
+                    <li><a href="rating.html">Rating</a></li>
+                    <li><a href="progress.html">Progress bars</a></li>
+                    <li><a href="carousel.html">Carousel</a></li>
+                    <li><a href="listview.html">List view</a></li>
+                    <li><a href="slider.html">Slider</a></li>
+                    <li><a href="dialog.html">Dialog box</a></li>
+                    <li><a href="ajax.html">Ajax reinit</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="pagelist.html">Calendar</a></li>
+                    <li class="divider"></li>
+                    <li><a href="notices.html">Notices and Replies</a></li>
+                    <li class="divider"></li>
+                    <li><a href="cards.html">Bonus - Deck of Cards</a></li>
+                </ul>
+            </li>
+
+            <li><a href="https://github.com/olton/Metro-UI-CSS">Source</a></li>
+        </ul>
+
+    </div>
+</div>
+</div>
+
+
+
+    <div class="page secondary">
+        <div class="page-header">
+            <div class="page-header-content">
+                <h1>Menus<small>demo</small></h1>
+                <a href="/" class="back-button big page-back"></a>
+            </div>
+        </div>
+
+        <div class="page-region">
+            <div class="page-region-content">
+                <div class="span10">
+                    <h2>Dropdown Menu</h2>
+                    <div class="clearfix">
+                        <ul class="dropdown-menu open" style="display: block; position: static; margin-bottom: 15px; margin-left: 0;">
+                            <li><a href="#">ItemName</a></li>
+                            <li><a href="#">ItemName</a></li>
+                            <li><a href="#">ItemName</a></li>
+                            <li><a href="#">ItemName</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">ItemName</a></li>
+                        </ul>
+                    </div>
+                    <p>
+                        Toggleable, contextual menu for displaying lists of links. Made interactive with the <code>dropdown</code> javascript plugin.
+                    </p>
+                </div>
+
+                <h2>Navigation Bar</h2>
+                <div class="span10">
+                    <div class="nav-bar">
+                        <div class="nav-bar-inner">
+                            <a href="#"><span class="element brand">Product Name</span></a>
+                            <span class="divider"></span>
+
+                            <ul class="menu">
+                                <li data-role="dropdown">
+                                    <a>Item 1</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">SubItem 1</a></li>
+                                        <li><a href="#">SubItem 2</a></li>
+                                        <li><a href="#">SubItem 3</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">SubItem 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <br />
+                    <p>You can change color of the navigation bar. To set predefined color for navigation bar you can use bg-color-* classes.</p>
+                    <br />
+                    <br />
+                    <br />
+
+                    <code>
+                        &lt;div class="nav-bar bg-color-darken"&gt;...&lt;/div&gt;
+                    </code>
+                    <div class="nav-bar bg-color-darken">
+                        <div class="nav-bar-inner">
+                            <a href="#"><span class="element brand">Product Name</span></a>
+                            <span class="divider"></span>
+
+                            <ul class="menu">
+                                <li data-role="dropdown">
+                                    <a>Item 1</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">SubItem 1</a></li>
+                                        <li><a href="#">SubItem 2</a></li>
+                                        <li><a href="#">SubItem 3</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">SubItem 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <br />
+                    <code>
+                        &lt;div class="nav-bar bg-color-green"&gt;...&lt;/div&gt;
+                    </code>
+                    <div class="nav-bar bg-color-green">
+                        <div class="nav-bar-inner">
+                            <a href="#"><span class="element brand">Product Name</span></a>
+                            <span class="divider"></span>
+
+                            <ul class="menu">
+                                <li data-role="dropdown">
+                                    <a>Item 1</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">SubItem 1</a></li>
+                                        <li><a href="#">SubItem 2</a></li>
+                                        <li><a href="#">SubItem 3</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">SubItem 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <br />
+                    <code>
+                        &lt;div class="nav-bar bg-color-pink"&gt;...&lt;/div&gt;
+                    </code>
+                    <div class="nav-bar bg-color-pink">
+                        <div class="nav-bar-inner">
+                            <a href="#"><span class="element brand">Product Name</span></a>
+                            <span class="divider"></span>
+
+                            <ul class="menu">
+                                <li data-role="dropdown">
+                                    <a>Item 1</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">SubItem 1</a></li>
+                                        <li><a href="#">SubItem 2</a></li>
+                                        <li><a href="#">SubItem 3</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">SubItem 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <br />
+                    <p>
+                        For additional colors see <a href="global.php">this page</a>.
+                    </p>
+
+                    <h2>Component definition</h2>
+<pre class="prettyprint linenums">
+    &lt;div class="nav-bar"&gt;
+        &lt;div class="nav-bar-inner"&gt;
+
+            &lt;span class="element"&gt;Product Name&lt;/span&gt;
+
+            &lt;span class="divider"&gt;&lt;/span&gt;
+
+            &lt;ul class="menu"&gt;
+                &lt;li data-role="dropdown"&gt;
+                    &lt;a href="#"&gt;Item 1&lt;/a&gt;
+                    &lt;ul class="dropdown-menu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;SubItem&lt;/a&gt;&lt;/li&gt;
+                        ...
+                        &lt;li&gt;&lt;a href="#"&gt;SubItem&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a /&gt;&lt;/li&gt;
+                &lt;li class="divider"&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</pre>
+
+                    <p>
+                        For dropdown you must include in head <code>dropdown.js</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="page">
+        <div class="nav-bar">
+            <div class="nav-bar-inner padding10">
+                <span class="element">
+                    2012-2013, Metro UI CSS &copy; by <a class="fg-color-white" href="mailto:sergey@pimenov.com.ua">Sergey Pimenov</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+	
+    <script type="text/javascript" src="js/assets/github.info.js"></script>
+    <script type="text/javascript" src="js/assets/google-analytics.js"></script>
+    <script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/sharrre/jquery.sharrre-1.3.4.min.js"></script>
+
+    <script>
+        $('#shareme').sharrre({
+            share: {
+                googlePlus: true
+                ,facebook: true
+                ,twitter: true
+                ,delicious: true
+            },
+            urlCurl: "js/sharrre/sharrre.html",
+            buttons: {
+                googlePlus: {size: 'tall'},
+                facebook: {layout: 'box_count'},
+                twitter: {count: 'vertical'},
+                delicious: {size: 'tall'}
+            },
+            hover: function(api, options){
+                $(api.element).find('.buttons').show();
+            }
+        });
+    </script>
+
+    </body>
+</html>

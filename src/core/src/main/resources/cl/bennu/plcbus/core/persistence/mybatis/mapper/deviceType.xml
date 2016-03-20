@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DeviceType">
+
+    <resultMap id="deviceTypeResult" type="cl.bennu.plcbus.common.domain.DeviceType" >
+        <id property="id" column="tpdp_id" />
+        <result property="name" column="tpdp_nombre"/>
+        <result property="active" column="tpdp_activo"/>
+    </resultMap>
+
+    <sql id="selectDeviceType">
+      select tpdp_id
+          , tpdp_nombre
+          , tpdp_activo
+      from tipo_dispositivo tpdp
+    </sql>
+
+    <select id="getAllDeviceType" resultMap="deviceTypeResult">
+        <include refid="selectDeviceType"/>
+    </select>
+
+    <select id="getAllDeviceTypeActive" resultMap="deviceTypeResult">
+        <include refid="selectDeviceType"/>
+        where
+    </select>
+
+
+</mapper>

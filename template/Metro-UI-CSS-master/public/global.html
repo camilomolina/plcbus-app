@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="Metro UI CSS">
+    <meta name="author" content="Sergey Pimenov">
+    <meta name="keywords" content="windows 8, modern style, Metro UI, style, modern, css, framework">
+
+    <link href="css/modern.css" rel="stylesheet">
+    <link href="css/modern-responsive.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" type="text/css">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/assets/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/assets/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/assets/moment.js"></script>
+    <script type="text/javascript" src="js/assets/moment_langs.js"></script>
+
+    <script type="text/javascript" src="js/modern/dropdown.js"></script>
+    <script type="text/javascript" src="js/modern/accordion.js"></script>
+    <script type="text/javascript" src="js/modern/buttonset.js"></script>
+    <script type="text/javascript" src="js/modern/carousel.js"></script>
+    <script type="text/javascript" src="js/modern/input-control.js"></script>
+    <script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+    <script type="text/javascript" src="js/modern/rating.js"></script>
+    <script type="text/javascript" src="js/modern/slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-drag.js"></script>
+    <script type="text/javascript" src="js/modern/calendar.js"></script>
+
+    <title>Metro UI CSS</title>
+</head>
+<body class="metrouicss" onload="prettyPrint()">
+
+<div class="page">
+<div class="nav-bar">
+    <div class="nav-bar-inner padding10">
+        <span class="pull-menu"></span>
+
+        <a href="/"><span class="element brand">
+            <img class="place-left" src="images/logo32.png" style="height: 20px"/>
+            Metro UI CSS <small><?= include("version.phtml")?></small>
+        </span></a>
+
+        <div class="divider"></div>
+
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li data-role="dropdown">
+                <a href="#">Scaffolding</a>
+                <ul class="dropdown-menu">
+                    <li><a href="global.html">Global styles</a></li>
+                    <li><a href="layout.html">Layouts and templates</a></li>
+                    <li><a href="grid.html">Grid system</a></li>
+                    <li class="divider"></li>
+                    <li><a href="responsive.html">Responsive design</a>
+                    </li>
+                </ul>
+            </li>
+            <li data-role="dropdown"><a href="#">Base CSS</a>
+                <ul class="dropdown-menu">
+                    <li><a href="typography.html">Typography</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="images.html">Images</a></li>
+                    <li class="divider"></li>
+                    <li><a href="icons.html">Icons</a></li>
+                </ul>
+            </li>
+            <li data-role="dropdown"><a href="#">Components</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tiles.html">Tiles</a></li>
+                    <li><a href="menus.html">Menu and Navigation</a></li>
+                    <li><a href="sidebar.html">Sidebar</a></li>
+                    <li><a href="pagecontrol.html">Page control</a></li>
+                    <li><a href="accordion.html">Accordion</a></li>
+                    <li><a href="buttons-set.html">Buttons set</a></li>
+                    <li><a href="rating.html">Rating</a></li>
+                    <li><a href="progress.html">Progress bars</a></li>
+                    <li><a href="carousel.html">Carousel</a></li>
+                    <li><a href="listview.html">List view</a></li>
+                    <li><a href="slider.html">Slider</a></li>
+                    <li><a href="dialog.html">Dialog box</a></li>
+                    <li><a href="ajax.html">Ajax reinit</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="pagelist.html">Calendar</a></li>
+                    <li class="divider"></li>
+                    <li><a href="notices.html">Notices and Replies</a></li>
+                    <li class="divider"></li>
+                    <li><a href="cards.html">Bonus - Deck of Cards</a></li>
+                </ul>
+            </li>
+
+            <li><a href="https://github.com/olton/Metro-UI-CSS">Source</a></li>
+        </ul>
+
+    </div>
+</div>
+</div>
+
+
+
+    <div class="page secondary">
+        <div class="page-header">
+            <div class="page-header-content">
+                <h1>Global<small>styles</small></h1>
+                <a href="/" class="back-button big page-back"></a>
+            </div>
+        </div>
+
+        <div class="page-region">
+            <div class="page-region-content">
+                <div class="grid">
+                    <div class="row">
+                        <div class="span10">
+                            <h2>Requires HTML5 doctype</h2>
+                            <p>Metro UI CSS makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
+
+<pre class="prettyprint linenums">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+      ...
+    &lt;/html&gt;
+</pre>
+                            <h2>JavaScript</h2>
+                            <p>All javascript plugins required <a href="http://jquery.com/">jQuery</a>.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span10">
+                            <h2>Reset Styles</h2>
+                            <p>
+                               In Metro UI CSS used <a href="http://github.com/necolas/normalize.css">normalize.css</a> by <a href="http://nicolasgallagher.com/">Nicolas Gallaher</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span3">
+                            <h2>Colors</h2>
+                            <ul class="unstyled">
+                                <li style="height: 40px;"><span class="square bg-color-green"></span>*-color-green</li>
+                                <li style="height: 40px;"><span class="square bg-color-greenDark"></span>*-color-greenDark</li>
+                                <li style="height: 40px;"><span class="square bg-color-greenLight"></span>*-color-greenLight</li>
+								<li style="height: 40px;"><span class="square bg-color-magenta"></span>*-color-magenta</li>
+                                <li style="height: 40px;"><span class="square bg-color-pink"></span>*-color-pink</li>
+                                <li style="height: 40px;"><span class="square bg-color-pinkDark"></span>*-color-pinkDark</li>
+                            </ul>
+                        </div>
+                        <div class="span3">
+                            <h2>&nbsp;</h2>
+                            <ul class="unstyled">
+                                <li style="height: 40px;"><span class="square bg-color-yellow"></span>*-color-yellow</li>
+                                <li style="height: 40px;"><span class="square bg-color-darken"></span>*-color-darken</li>
+                                <li style="height: 40px;"><span class="square bg-color-purple"></span>*-color-purple</li>
+								<li style="height: 40px;"><span class="square bg-color-teal"></span>*-color-teal</li>
+                                <li style="height: 40px;"><span class="square bg-color-blue"></span>*-color-blue</li>
+                                <li style="height: 40px;"><span class="square bg-color-blueDark"></span>*-color-blueDark</li>
+                            </ul>
+                        </div>
+                        <div class="span3">
+                            <h2>&nbsp;</h2>
+                            <ul class="unstyled">
+                                <li style="height: 40px;"><span class="square bg-color-blueLight"></span>*-color-blueLight</li>
+                                <li style="height: 40px;"><span class="square bg-color-orange"></span>*-color-orange</li>
+                                <li style="height: 40px;"><span class="square bg-color-orangeDark"></span>*-color-orangeDark</li>
+                                <li style="height: 40px;"><span class="square bg-color-red"></span>*-color-red</li>
+								<li style="height: 40px;"><span class="square bg-color-redLight"></span>*-color-redLight</li>
+                                <li style="height: 40px;"><span class="square bg-color-white"></span>*-color-white</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span10">
+                            <p>To set background color use prefix <strong>bg</strong>, for set text color use prefix <strong>fg</strong></p>
+<pre class="prettyprint linenums">
+    &lt;div class="bg-color-red"&gt;...&lt;/div&gt;
+    &lt;span class="fg-color-blue"&gt;...&lt;/span&gt;
+</pre>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="span10">
+                            <p>To set border color use prefix <strong>border</strong></p>
+                            <div class="clearfix">
+                                <div class="span2 border-color-blue">
+                                    &nbsp;
+                                </div>
+                                <div class="span2 border-color-green">
+                                    &nbsp;
+                                </div>
+                                <div class="span2 border-color-red">
+                                    &nbsp;
+                                </div>
+                                <div class="span2 border-color-orange">
+                                    &nbsp;
+                                </div>
+                                <div class="span2 border-color-darken">
+                                    &nbsp;
+                                </div>
+                            </div>
+<pre class="prettyprint linenums">
+    &lt;div class="border-color-red"&gt;...&lt;/div&gt;
+</pre>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="span10">
+                            <p>To set outline color for components (such as tile, listView item, etc.) use prefix <strong>outline</strong></p>
+                            <div class="clearfix">
+                                <div class="tile outline-color-blue">
+                                    &nbsp;
+                                </div>
+                                <div class="tile outline-color-green">
+                                    &nbsp;
+                                </div>
+                                <div class="tile outline-color-red">
+                                    &nbsp;
+                                </div>
+                                <div class="tile outline-color-orange">
+                                    &nbsp;
+                                </div>
+                            </div>
+<pre class="prettyprint linenums">
+    &lt;div class="tile outline-color-red"&gt;...&lt;/div&gt;
+</pre>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="span10">
+                            <h2>Fonts</h2>
+                            <p class="span10">
+                                In Metro UI CSS i use Segoe UI, <a href="http://www.google.com/webfonts#UsePlace:use/Collection:Open+Sans">Open Sans</a> fonts (depending on the availability in the system).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="row">
+                        <?php include("adsense.php")?>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+	<div class="page">
+        <div class="nav-bar">
+            <div class="nav-bar-inner padding10">
+                <span class="element">
+                    2012-2013, Metro UI CSS &copy; by <a class="fg-color-white" href="mailto:sergey@pimenov.com.ua">Sergey Pimenov</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+	
+    <script type="text/javascript" src="js/assets/github.info.js"></script>
+    <script type="text/javascript" src="js/assets/google-analytics.js"></script>
+    <script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/sharrre/jquery.sharrre-1.3.4.min.js"></script>
+
+    <script>
+        $('#shareme').sharrre({
+            share: {
+                googlePlus: true
+                ,facebook: true
+                ,twitter: true
+                ,delicious: true
+            },
+            urlCurl: "js/sharrre/sharrre.html",
+            buttons: {
+                googlePlus: {size: 'tall'},
+                facebook: {layout: 'box_count'},
+                twitter: {count: 'vertical'},
+                delicious: {size: 'tall'}
+            },
+            hover: function(api, options){
+                $(api.element).find('.buttons').show();
+            }
+        });
+    </script>
+
+    </body>
+</html>

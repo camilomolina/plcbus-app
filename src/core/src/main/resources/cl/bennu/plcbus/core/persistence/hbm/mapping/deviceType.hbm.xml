@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="cl.bennu.plcbus.common.domain.DeviceType" table="tipo_dispositivo" lazy="false">
+        <id name="id" column="tpdp_id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="tpdp_nombre"/>
+
+        <property name="active" column="tpdp_activo"/>
+        <property name="creatorUser" column="tpdp_usuario_creador"/>
+        <property name="create" column="tpdp_fecha_creacion"/>
+        <property name="updateUser" column="tpdp_usuario_actualizador"/>
+        <property name="update" column="tpdp_fecha_actualizacion"/>
+    </class>
+
+</hibernate-mapping>
