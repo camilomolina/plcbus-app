@@ -65,6 +65,9 @@
             <result name="movementActionSuccess">/jsp/backoffice/movementAction.jsp</result>
             <result name="movementActionList">/jsp/backoffice/jspf/movementActionList.jsp</result>
             <result name="movementActionDetailList">/jsp/backoffice/jspf/movementActionDetailList.jsp</result>
+
+            <result name="temperatureProgrammingSuccess">/jsp/backoffice/temperatureProgramming.jsp</result>
+            <result name="temperatureProgrammingList">/jsp/backoffice/jspf/temperatureProgrammingList.jsp</result>
         </action>
 
         <action name="statistics/*" class="statisticsAction" method="{1}" >

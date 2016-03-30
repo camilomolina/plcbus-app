@@ -14,6 +14,7 @@ var PropertyData = {
                 , "configurationBean.property.address": $("#address").val()
                 , "configurationBean.property.phone": $("#phone").val()
                 , "configurationBean.property.mail": $("#mail").val()
+                , "configurationBean.property.mail2": $("#mail2").val()
                 , "configurationBean.property.name": $("#name").val()
             };
 

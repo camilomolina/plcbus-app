@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 44.3 44.1" style="enable-background:new 0 0 44.3 44.1;" xml:space="preserve">
+<style type="text/css">
+	
+		.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#4ABD24;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#4ABD24;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<g>
+	<circle class="st0" cx="22.2" cy="22" r="20.9"/>
+	<polygon class="st1" points="10.1,18.5 10.1,20 18.2,17 10.1,13.4 10.1,15 14.7,17 	"/>
+	<polygon class="st1" points="34.3,18.5 34.3,20 26.3,17 34.3,13.4 34.3,15 29.8,17 	"/>
+	<g>
+		<g>
+			<rect x="19.4" y="19" class="st1" width="6.1" height="10.3"/>
+			<rect x="18.2" y="29.3" class="st1" width="8.1" height="2.9"/>
+			<rect x="20.2" y="17.3" class="st1" width="4" height="1.6"/>
+			<rect x="19.4" y="15.7" class="st1" width="6.1" height="1.6"/>
+			<rect x="20.6" y="15.3" class="st1" width="3.2" height="0.8"/>
+		</g>
+		<path class="st1" d="M27.5,32.4h1.6c0,0-0.2-3.4,1.2-4.9C30.3,27.4,27.4,29.9,27.5,32.4z"/>
+		<path class="st2" d="M21,32.4h1.6c0,0-0.2-3.4,1.2-4.9C23.8,27.4,21,29.9,21,32.4z"/>
+		<path class="st1" d="M17,32.4h-1.6c0,0,0.2-3.4-1.2-4.9C14.2,27.4,17,29.9,17,32.4z"/>
+	</g>
+</g>
+</svg>

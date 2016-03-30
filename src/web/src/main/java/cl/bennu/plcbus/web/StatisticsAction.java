@@ -62,6 +62,7 @@ public class StatisticsAction extends BaseAction {
         return GRAPHICS_SUCCESS;
     }
 
+    // eventos por dispositivo
     public void matrixDeviceVsEvent() throws Exception {
         List<Event> matrixDeviceVsEvent = statisticsService.matrixDeviceVsEvent(getContext());
         serialize(matrixDeviceVsEvent);

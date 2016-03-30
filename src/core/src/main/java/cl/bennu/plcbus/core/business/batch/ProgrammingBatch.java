@@ -3,12 +3,18 @@ package cl.bennu.plcbus.core.business.batch;
 import cl.bennu.plcbus.common.Constants;
 import cl.bennu.plcbus.common.domain.Programming;
 import cl.bennu.plcbus.common.domain.ProgrammingDetail;
+import cl.bennu.plcbus.common.domain.Property;
+import cl.bennu.plcbus.common.domain.weather.Weather;
 import cl.bennu.plcbus.common.enums.EventTypeEnum;
+import cl.bennu.plcbus.common.enums.RangeTypeEnum;
 import cl.bennu.plcbus.common.exception.RainException;
+import cl.bennu.plcbus.core.business.helper.MailHelper;
 import cl.bennu.plcbus.core.business.iface.IConfigurationService;
 import cl.bennu.plcbus.core.business.iface.IControlService;
 import cl.bennu.plcbus.core.business.iface.IMaintainerService;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.mail.HtmlEmail;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,6 +37,9 @@ public class ProgrammingBatch extends BaseBatch {
         //System.out.println("Ejecutando ProgrammingBatch");
         try {
             List<Programming> programmingList = configurationService.getAllProgramming(buildContext());
+            Property property = maintainerService.getProperty(buildContext());
+            Weather weather = maintainerService.getLastedWeather(buildContext());
+
             Calendar calendar = GregorianCalendar.getInstance();
 
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(Constants.TIME_FORMAT);
@@ -62,10 +71,59 @@ public class ProgrammingBatch extends BaseBatch {
                             int minuteOff = Integer.parseInt(strOff.split(":")[1]);
 
                             if (hourOn == hourNow && minuteOn == minuteNow) {
-                                System.out.println("PROGRAMMING::ON " + programming.getDevice().getCode() + "[" + programming.getDevice().getId() + "]");
                                 try {
-                                    controlService.on(buildContext(), programming.getDevice().getId(), EventTypeEnum.PROGRAMMING_ON);
+                                    // verificar si tiene filtro por temperatura
+                                    if (BooleanUtils.isTrue(programming.getTemperature())) {
+                                        boolean on = false;
+                                        if (RangeTypeEnum.LESS.equals(programming.getRangeTypeEnum())) {
+                                            if (weather.getTemp() < programming.getMax()) {
+                                                on = true;
+                                            }
+                                        } else if (RangeTypeEnum.GREATER.equals(programming.getRangeTypeEnum())) {
+                                            if (weather.getTemp() > programming.getMin()) {
+                                                on = true;
+                                            }
+                                        } else if (RangeTypeEnum.BETWEEN.equals(programming.getRangeTypeEnum())) {
+                                            if (weather.getTemp() < programming.getMax() && weather.getTemp() > programming.getMin()) {
+                                                on = true;
+                                            }
+                                        }
+
+                                        if (on) {
+                                            System.out.println("PROGRAMMING::ON [TEMPERATURE]" + programming.getDevice().getCode() + "[" + programming.getDevice().getId() + "]");
+                                            controlService.on(buildContext(), programming.getDevice().getId(), EventTypeEnum.PROGRAMMING_ON);
+                                        }
+                                    } else {
+                                        System.out.println("PROGRAMMING::ON " + programming.getDevice().getCode() + "[" + programming.getDevice().getId() + "]");
+                                        controlService.on(buildContext(), programming.getDevice().getId(), EventTypeEnum.PROGRAMMING_ON);
+                                    }
                                 } catch (RainException e) {
+                                    // excepcion de riego
+                                    String smsUser = "camilo.molina";
+                                    String smsPass = "123456";
+                                    String smsPhone = "569" + property.getPhone();
+                                    String smsText = "";
+                                    String urlStr = "http://www.redvoiss.net/sms/single/user=" + smsUser + "&pwd=" + smsPass + "&dest=" + smsPhone + "&txt=";
+
+                                    HtmlEmail email = MailHelper.buildHtmlEmail(Constants.MAIL_HOST, Constants.MAIL_PORT, Constants.MAIL_SSL, Constants.MAIL_TLS, Constants.MAIL_FROM, Constants.MAIL_FROM_ALIAS, Constants.MAIL_USER, Constants.MAIL_PASS);
+
+                                    email.setSubject("Alerta de cancelacion de riego");
+                                    email.addTo(property.getMail());
+                                    // mails adicionales
+                                    try {
+                                        String[] mails = property.getMail2().split(";");
+                                        for (String mail : mails) {
+                                            if (StringUtils.isNotBlank(mail.trim())) {
+                                                email.addBcc(mail.trim());
+                                            }
+                                        }
+                                    } catch (Exception ee) {
+                                        // excepcion no manejada
+                                    }
+
+                                    email.setHtmlMsg("Se cancela riego de dispositivo [" + programming.getDevice().getCode() + "] " + programming.getDevice().getName());
+                                    email.send();
+
                                     System.out.println("PROGRAMMING::ALERT " + programming.getDevice().getCode() + "[" + programming.getDevice().getId() + "] OMITIDO POR LLUVIA");
                                 }
                             }
@@ -76,7 +134,6 @@ public class ProgrammingBatch extends BaseBatch {
                         }
                     }
                 }
-
             }
         } catch (Exception e) {
             System.out.println("Error en ProgrammingTimer, " + e.getCause());

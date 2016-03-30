@@ -39,6 +39,12 @@ public interface IEventDAO extends IBaseDAO<Event> {
 
     List<Event> matrixByEvent();
 
+    List<Event> matrixByEventLastMonth();
+
+    List<Event> matrixByEventLastWeek();
+
+    List<Event> matrixByEventLastDay();
+
     List<Event> matrixByDeviceCode();
 
 

@@ -13,6 +13,7 @@ public class Property extends BaseDomain {
     private String name;
     private String address;
     private String mail;
+    private String mail2;
     private Long phone;
 
     public Long getPhone() {
@@ -29,6 +30,14 @@ public class Property extends BaseDomain {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getMail2() {
+        return mail2;
+    }
+
+    public void setMail2(String mail2) {
+        this.mail2 = mail2;
     }
 
     public String getName() {

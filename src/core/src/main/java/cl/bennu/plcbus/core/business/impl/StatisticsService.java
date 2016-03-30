@@ -83,7 +83,7 @@ public class StatisticsService implements IStatisticsService {
 
     @Override
     public List<Event> matrixDeviceVsEvent(ContextDTO contextDTO) {
-        return eventDAO.matrixByEvent();
+        return eventDAO.matrixByEventLastMonth();
     }
 
 

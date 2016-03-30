@@ -128,7 +128,8 @@
                                         <legend>Programaci&oacute;n</legend>
 
                                         <div class="row">
-                                            <div class="span7">
+                                            <div class="span5">
+                                                <p class="tertiary-info-secondary-text">Frecuencia</p>
                                                 <label class="input-control radio" onclick="Programming.checkDayDiv();">
                                                     <input type="radio" value="1" name="configurationBean.programmingSummary.programmingTypeEnum" checked>
                                                     <span class="helper">Diaria</span>
@@ -144,6 +145,13 @@
                                                 <label class="input-control radio" onclick="Programming.checkDayDiv();">
                                                     <input type="radio" value="4" name="configurationBean.programmingSummary.programmingTypeEnum" disabled>
                                                     <span class="helper">Anual</span>
+                                                </label>
+                                            </div>
+                                            <div class="span2">
+                                                <p class="tertiary-info-secondary-text">Filtrar por temperatura</p>
+                                                <label class="input-control checkbox" onclick="Programming.checkTemperatureDiv();">
+                                                    <input type="checkbox" id="temperature" name="configurationBean.programmingSummary.temperature" value="true"/>
+                                                    <span class="helper">Activar</span>
                                                 </label>
                                             </div>
                                             <div class="span1">
@@ -194,6 +202,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="row" id="dayDiv">
                                             <div class="span8">
                                                 <p class="tertiary-info-secondary-text">Dias</p>
@@ -205,6 +214,40 @@
                                                 </s:iterator>
                                             </div>
                                         </div>
+
+                                        <div class="row" id="temperatureDiv">
+                                            <div class="span4">
+                                                <p class="tertiary-info-secondary-text">Rango</p>
+
+                                                <label class="input-control radio" onclick="Programming.checkRangeDiv();">
+                                                    <input type="radio" value="1" name="configurationBean.programmingSummary.rangeTypeEnum" checked>
+                                                    <span class="helper">Menor</span>
+                                                </label>
+                                                <label class="input-control radio" onclick="Programming.checkRangeDiv();">
+                                                    <input type="radio" value="2" name="configurationBean.programmingSummary.rangeTypeEnum" >
+                                                    <span class="helper">Mayor</span>
+                                                </label>
+                                                <label class="input-control radio" onclick="Programming.checkRangeDiv();">
+                                                    <input type="radio" value="3" name="configurationBean.programmingSummary.rangeTypeEnum" >
+                                                    <span class="helper">Entre</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="span4">
+                                                <p class="tertiary-info-secondary-text">Temperatura</p>
+                                                <div class="span1" id="temperatureMinDiv">
+                                                    <div class="input-control select" >
+                                                        <s:select name="configurationBean.programmingSummary.temperatureSummary.min" id="min" list="configurationBean.temperatureList" />
+                                                    </div>
+                                                </div>
+                                                <div class="span1" id="temperatureMaxDiv">
+                                                    <div class="input-control select" >
+                                                        <s:select name="configurationBean.programmingSummary.temperatureSummary.max" id="max" list="configurationBean.temperatureList" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="row">
                                             <div class="span8">
                                                 <p class="tertiary-info-secondary-text">Motivo</p>

@@ -69,9 +69,18 @@ public class AlertTimer extends TimerTask {
             HtmlEmail email = MailHelper.buildHtmlEmail(host, port, ssl, tls, from, fromAlias, user, pass);
 
             email.setSubject("Alerta de dispositivo encendido");
-            email.addTo(property == null ? "" : property.getMail());
-            //TODO: cambiar por mail de propiedad
-            email.addBcc("camilo.molina.orth@gmail.com");
+            email.addTo(property.getMail());
+            // mails adicionales
+            try {
+                String[] mails = property.getMail2().split(";");
+                for (String mail : mails) {
+                    if (StringUtils.isNotBlank(mail.trim())) {
+                        email.addBcc(mail.trim());
+                    }
+                }
+            } catch (Exception e) {
+                // excepcion no manejada
+            }
 
             long time = System.currentTimeMillis() / 1000;
             for (Device device : deviceList) {

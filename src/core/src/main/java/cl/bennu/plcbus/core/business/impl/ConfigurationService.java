@@ -317,6 +317,23 @@ public class ConfigurationService implements IConfigurationService {
         programming.setReason(programmingSummary.getReason());
         programming.setProgrammingTypeEnum(programmingSummary.getProgrammingTypeEnum());
         programming.setActive(programmingSummary.getActive());
+        if (BooleanUtils.isTrue(programmingSummary.getTemperature())) {
+            programming.setTemperature(Boolean.TRUE);
+            programming.setRangeTypeEnum(programmingSummary.getRangeTypeEnum());
+            if (RangeTypeEnum.BETWEEN.equals(programmingSummary.getRangeTypeEnum())) {
+                programming.setMin(programmingSummary.getTemperatureSummary().getMin());
+                programming.setMax(programmingSummary.getTemperatureSummary().getMax());
+            } else if (RangeTypeEnum.LESS.equals(programmingSummary.getRangeTypeEnum())) {
+                //programming.setMin(null);
+                programming.setMax(programmingSummary.getTemperatureSummary().getMax());
+            } else if (RangeTypeEnum.GREATER.equals(programmingSummary.getRangeTypeEnum())) {
+                programming.setMin(programmingSummary.getTemperatureSummary().getMin());
+                //programming.setMax(null);
+            }
+        } else {
+            programming.setTemperature(Boolean.FALSE);
+        }
+
         programming.setCreate(new Date());
         programming.setCreatorUser(contextDTO.getUser());
 

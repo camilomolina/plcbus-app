@@ -2,6 +2,7 @@ package cl.bennu.plcbus.common.domain.summary;
 
 import cl.bennu.plcbus.common.enums.DayEnum;
 import cl.bennu.plcbus.common.enums.ProgrammingTypeEnum;
+import cl.bennu.plcbus.common.enums.RangeTypeEnum;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,6 +23,33 @@ public class ProgrammingSummary implements Serializable {
     private Long[] dayIdArray;
     private String days;
     private Boolean active;
+    private Boolean temperature;
+    private RangeTypeEnum rangeTypeEnum;
+    private TemperatureSummary temperatureSummary;
+
+    public Boolean getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(Boolean temperature) {
+        this.temperature = temperature;
+    }
+
+    public TemperatureSummary getTemperatureSummary() {
+        return temperatureSummary;
+    }
+
+    public void setTemperatureSummary(TemperatureSummary temperatureSummary) {
+        this.temperatureSummary = temperatureSummary;
+    }
+
+    public RangeTypeEnum getRangeTypeEnum() {
+        return rangeTypeEnum;
+    }
+
+    public void setRangeTypeEnum(RangeTypeEnum rangeTypeEnum) {
+        this.rangeTypeEnum = rangeTypeEnum;
+    }
 
     public Boolean getActive() {
         return active;

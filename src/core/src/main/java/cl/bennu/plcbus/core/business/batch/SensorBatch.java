@@ -61,8 +61,17 @@ public class SensorBatch extends BaseBatch {
             HtmlEmail email = MailHelper.buildHtmlEmail(Constants.MAIL_HOST, Constants.MAIL_PORT, Constants.MAIL_SSL, Constants.MAIL_TLS, Constants.MAIL_FROM, Constants.MAIL_FROM_ALIAS, Constants.MAIL_USER, Constants.MAIL_PASS);
             email.setSubject("Alerta de sensor");
             email.addTo(property == null ? "" : property.getMail());
-            //TODO: cambiar por mail de propiedad
-            email.addBcc("camilo.molina.orth@gmail.com");
+            // mails adicionales
+            try {
+                String[] mails = property.getMail2().split(";");
+                for (String mail : mails) {
+                    if (StringUtils.isNotBlank(mail.trim())) {
+                        email.addBcc(mail.trim());
+                    }
+                }
+            } catch (Exception e) {
+                // excepcion no manejada
+            }
 
             if (deviceList == null) return;
 

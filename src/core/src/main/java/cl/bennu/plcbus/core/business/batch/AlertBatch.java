@@ -63,8 +63,17 @@ public class AlertBatch extends BaseBatch {
 
             email.setSubject("Alerta de dispositivo encendido");
             email.addTo(property.getMail());
-            //TODO: cambiar por mail de propiedad
-            email.addBcc("camilo.molina.orth@gmail.com");
+            // mails adicionales
+            try {
+                String[] mails = property.getMail2().split(";");
+                for (String mail : mails) {
+                    if (StringUtils.isNotBlank(mail.trim())) {
+                        email.addBcc(mail.trim());
+                    }
+                }
+            } catch (Exception e) {
+                // excepcion no manejada
+            }
 
             long time = System.currentTimeMillis() / 1000;
             for (Device device : deviceList) {

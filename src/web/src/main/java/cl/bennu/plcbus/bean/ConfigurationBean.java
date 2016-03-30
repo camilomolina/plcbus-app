@@ -51,6 +51,16 @@ public class ConfigurationBean {
     private Long movementActionDetailIndex;
     private Boolean movementActionActive;
 
+    private List<Integer> temperatureList;
+
+    public List<Integer> getTemperatureList() {
+        return temperatureList;
+    }
+
+    public void setTemperatureList(List<Integer> temperatureList) {
+        this.temperatureList = temperatureList;
+    }
+
     public Boolean getSynchronizedTimeOut() {
         return synchronizedTimeOut;
     }

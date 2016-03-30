@@ -102,6 +102,19 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="span5">
+                                    <p class="tertiary-info-secondary-text">Mails adicionales (separados por ;)</p>
+                                    <div class="input-control text">
+                                        <input type="text" name="configurationBean.property.mail2" id="mail2" value="<s:property value="configurationBean.property.mail2"/>" autofocus="" placeholder="mail-x@dominio.com;mail-y@dominio.com">
+                                        <button type="button" class="btn-clear" />
+                                    </div>
+                                </div>
+                                <div class="span3">
+
+                                </div>
+                            </div>
+
                         </fieldset>
 
                         <fieldset>

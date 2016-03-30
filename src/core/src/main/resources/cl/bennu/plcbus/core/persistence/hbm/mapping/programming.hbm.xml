@@ -18,6 +18,10 @@
         </bag>
         <property name="active" column="prgm_activo" />
 
+        <property name="temperature" column="prgm_temperatura" />
+        <property name="rangeTypeEnum" column="tprg_id" type="rangeTypeEnum" />
+        <property name="min" column="prgm_min" />
+        <property name="max" column="prgm_max" />
 
         <property name="creatorUser" column="prgm_usuario_creador"/>
         <property name="create" column="prgm_fecha_creacion"/>

@@ -11,6 +11,7 @@
         </id>
         <property name="name" column="prpd_nombre"/>
         <property name="mail" column="prpd_mail"/>
+        <property name="mail2" column="prpd_mail2"/>
         <property name="address" column="prpd_direccion"/>
         <property name="phone" column="prpd_celular"/>
 

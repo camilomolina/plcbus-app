@@ -40,6 +40,7 @@
                         <li><a href="/plcbus/backoffice/configuration/startProgramming.do">Programaci&oacute;n</a></li>
                         <li><a href="/plcbus/backoffice/configuration/startScheduledShutdownDevice.do">Apagado Programado</a></li>
                         <li><a href="/plcbus/backoffice/configuration/startMovementAction.do">Sensor de movimiento</a></li>
+                        <!--<li><a href="/plcbus/backoffice/configuration/startTemperatureProgramming.do">Programaci&oacute;n por Temperatura</a></li>-->
                         <li><a href="/plcbus/backoffice/configuration/startSynchronized.do">Sinronizaci&oacute;n</a></li>
                         <li class="divider"></li>
                         <li><a>Distribucion</a></li>

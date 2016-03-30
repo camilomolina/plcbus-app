@@ -4,9 +4,10 @@ import cl.bennu.plcbus.base.BaseAction;
 import cl.bennu.plcbus.bean.ClientDataBean;
 import cl.bennu.plcbus.bean.ConfigurationBean;
 import cl.bennu.plcbus.bean.DeviceDistributionBean;
-import cl.bennu.plcbus.common.Constants;
 import cl.bennu.plcbus.common.domain.*;
+import cl.bennu.plcbus.common.domain.helper.TemperatureHelper;
 import cl.bennu.plcbus.common.domain.summary.ProgrammingSummary;
+import cl.bennu.plcbus.common.domain.summary.TemperatureSummary;
 import cl.bennu.plcbus.common.enums.*;
 import cl.bennu.plcbus.constant.Constant;
 import cl.bennu.plcbus.core.business.iface.IConfigurationService;
@@ -152,6 +153,16 @@ public class ConfigurationAction extends BaseAction {
         configurationBean.setDayList(DayEnum.valuesList());
         configurationBean.setHourList(HourEnum.valuesList());
         configurationBean.setMinuteList(MinuteEnum.valuesList());
+
+        // filtros de temperatura
+        configurationBean.setTemperatureList(TemperatureHelper.getTemperatureList());
+        TemperatureSummary temperatureSummary = new TemperatureSummary();
+        temperatureSummary.setMin(0);
+        temperatureSummary.setMax(20);
+
+        ProgrammingSummary programmingSummary = new ProgrammingSummary();
+        programmingSummary.setTemperatureSummary(temperatureSummary);
+        configurationBean.setProgrammingSummary(programmingSummary);
 
         return PROGRAMMING_SUCCESS;
     }
@@ -374,6 +385,10 @@ public class ConfigurationAction extends BaseAction {
         configurationService.deleteMovementAction(getContext(), configurationBean.getMovementActionId());
         serialize(SUCCESS_JSON);
     }
+
+
+
+
 
     public DeviceDistributionBean getDeviceDistributionBean() {
         return deviceDistributionBean;

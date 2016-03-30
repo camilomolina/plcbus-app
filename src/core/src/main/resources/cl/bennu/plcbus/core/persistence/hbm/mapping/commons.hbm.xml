@@ -45,4 +45,7 @@
         <param name="enumClass">cl.bennu.plcbus.common.enums.CameraTypeEnum</param>
     </typedef>
 
+    <typedef name="rangeTypeEnum" class="cl.bennu.plcbus.common.util.EnumType">
+        <param name="enumClass">cl.bennu.plcbus.common.enums.RangeTypeEnum</param>
+    </typedef>
 </hibernate-mapping>

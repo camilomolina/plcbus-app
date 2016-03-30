@@ -174,14 +174,8 @@ public class EventDAO extends BaseDAO<Event> implements IEventDAO {
         Date dateLo = getLo(now);
         Date dateHi = getHi(now);
 
-        /*
-        select e.tpev_id
-        , count(e.tpev_id)
-        from evento e
-        group by e.tpev_id
-         */
         Criteria criteria = getSession().createCriteria(Event.class);
-        //criteria.add(Restrictions.between("date", dateLo, dateHi));
+        criteria.add(Restrictions.between("date", dateLo, dateHi));
         criteria.setProjection(Projections.projectionList()
 //                .add(Projections.property("deviceCode"))
                 //.add(Projections.property("deviceName"))
@@ -189,7 +183,60 @@ public class EventDAO extends BaseDAO<Event> implements IEventDAO {
                         .add(Projections.count("eventTypeEnum"))
                         .add(Projections.groupProperty("eventTypeEnum"))
         );
-        //criteria.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
+        return criteria.list();
+    }
+
+    @Override
+    public List<Event> matrixByEventLastMonth() {
+        Date now = new Date();
+        Date dateLo = DateUtils.addMonths(now, -1);
+        Date dateHi = now;
+
+        Criteria criteria = getSession().createCriteria(Event.class);
+        criteria.add(Restrictions.between("date", dateLo, dateHi));
+        criteria.setProjection(Projections.projectionList()
+//                .add(Projections.property("deviceCode"))
+                        //.add(Projections.property("deviceName"))
+                        //.add(Projections.property("eventTypeEnum"))
+                        .add(Projections.count("eventTypeEnum"))
+                        .add(Projections.groupProperty("eventTypeEnum"))
+        );
+        return criteria.list();
+    }
+
+    @Override
+    public List<Event> matrixByEventLastWeek() {
+        Date now = new Date();
+        Date dateLo = DateUtils.addMonths(now, -7);
+        Date dateHi = now;
+
+        Criteria criteria = getSession().createCriteria(Event.class);
+        criteria.add(Restrictions.between("date", dateLo, dateHi));
+        criteria.setProjection(Projections.projectionList()
+//                .add(Projections.property("deviceCode"))
+                        //.add(Projections.property("deviceName"))
+                        //.add(Projections.property("eventTypeEnum"))
+                        .add(Projections.count("eventTypeEnum"))
+                        .add(Projections.groupProperty("eventTypeEnum"))
+        );
+        return criteria.list();
+    }
+
+    @Override
+    public List<Event> matrixByEventLastDay() {
+        Date now = new Date();
+        Date dateLo = DateUtils.addDays(now, -1);
+        Date dateHi = now;
+
+        Criteria criteria = getSession().createCriteria(Event.class);
+        criteria.add(Restrictions.between("date", dateLo, dateHi));
+        criteria.setProjection(Projections.projectionList()
+//                .add(Projections.property("deviceCode"))
+                        //.add(Projections.property("deviceName"))
+                        //.add(Projections.property("eventTypeEnum"))
+                        .add(Projections.count("eventTypeEnum"))
+                        .add(Projections.groupProperty("eventTypeEnum"))
+        );
         return criteria.list();
     }
 

@@ -6,6 +6,15 @@ var ERROR_MESSAGE = [];
 var Programming = {
     init: function () {
         $("#dayDiv").hide();
+        $("#temperatureDiv").hide();
+        Programming.checkRangeDiv();
+    },
+    checkTemperatureDiv: function () {
+        if ($("#temperature").is(":checked")) {
+            $("#temperatureDiv").show();
+        } else {
+            $("#temperatureDiv").hide();
+        }
     },
     checkDayDiv: function () {
         $("input[name='configurationBean.programmingSummary.programmingTypeEnum']:checked").each(function () {
@@ -17,6 +26,26 @@ var Programming = {
                 //
             } else if (parseInt($(this).val()) == 4) {
                 //
+            }
+        });
+    },
+    checkRangeDiv : function () {
+        $("input[name='configurationBean.programmingSummary.rangeTypeEnum']:checked").each(function () {
+            if (parseInt($(this).val()) == 1) {
+                $("#temperatureMinDiv").hide();
+                $("#temperatureMaxDiv").show();
+                $("#temperatureMinDiv").attr("class","span0");
+                $("#temperatureMaxDiv").attr("class","span2");
+            } else if (parseInt($(this).val()) == 2) {
+                $("#temperatureMinDiv").show();
+                $("#temperatureMaxDiv").hide();
+                $("#temperatureMinDiv").attr("class","span2");
+                $("#temperatureMaxDiv").attr("class","span0");
+            } else if (parseInt($(this).val()) == 3) {
+                $("#temperatureMinDiv").show();
+                $("#temperatureMaxDiv").show();
+                $("#temperatureMinDiv").attr("class","span1");
+                $("#temperatureMaxDiv").attr("class","span1");
             }
         });
     },
@@ -33,6 +62,8 @@ var Programming = {
                 days = days + ($(this).val()) + ",";
             });
 
+            var rangeTypeEnum = $("input[name='configurationBean.programmingSummary.rangeTypeEnum']:checked").val();
+
             var parameters = {
                 "configurationBean.programmingSummary.programmingTypeEnum": programmingTypeEnum
                 , "configurationBean.programmingSummary.reason": $("#reason").val()
@@ -45,6 +76,11 @@ var Programming = {
                 , "configurationBean.programmingSummary.dayIdArray": day2List
                 , "configurationBean.programmingSummary.days": days
                 , "configurationBean.programmingSummary.active": $("#active").is(":checked")
+
+                , "configurationBean.programmingSummary.temperature": $("#temperature").is(":checked")
+                , "configurationBean.programmingSummary.rangeTypeEnum": rangeTypeEnum
+                , "configurationBean.programmingSummary.temperatureSummary.min": $("#min").val()
+                , "configurationBean.programmingSummary.temperatureSummary.max": $("#max").val()
             };
 
             $.ajax({
@@ -178,6 +214,10 @@ var Programming = {
                 $(this).attr("checked", false);
             }
         });
+
+        $("#dayDiv").hide();
+        $("#temperatureDiv").hide();
+        Programming.checkRangeDiv();
     },
     changeStatusProgramming : function(id) {
         var programmingHTMLId = "#statusCheckbox_" + id;
