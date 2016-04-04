@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<video autoplay controls></video>
+    <script>
+        navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia || navigator.msGetUserMedia);
+
+        var onFailSoHard = function(e) {
+            console.log('Reeeejected!', e);
+        };
+
+        // Not showing vendor prefixes.
+        navigator.getUserMedia('video, audio', function(localMediaStream) {
+            var video = document.querySelector('video');
+            video.src = window.URL.createObjectURL(localMediaStream);
+
+            video.onloadedmetadata = function(e) {
+            };
+        }, onFailSoHard);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="cl.bennu.plcbus.common.domain.MovementActionDetail" table="detalle_accion_movimiento" lazy="false">
+        <id name="id" column="damv_id">
+            <generator class="native"/>
+        </id>
+        <many-to-one name="movementAction" column="acmv_id" not-null="true" fetch="join" update="false" lazy="false" cascade="none"/>
+        <property name="movementActionTypeEnum" column="tpam_id" type="movementActionTypeEnum"/>
+        <many-to-one name="device" column="dpst_id" not-null="true" fetch="select" />
+
+        <property name="creatorUser" column="damv_usuario_creador"/>
+        <property name="create" column="damv_fecha_creacion"/>
+        <property name="updateUser" column="damv_usuario_actualizador"/>
+        <property name="update" column="damv_fecha_actualizacion"/>
+    </class>
+
+
+</hibernate-mapping>

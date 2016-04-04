@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    <constant name="struts.action.extension" value="do"/>
+    <constant name="struts.ui.theme" value="simple"/>
+
+    <package name="common-plcbus" abstract="true" extends="struts-default,json-default">
+        <!--
+        <interceptors>
+            <interceptor name="security" class="null"/>
+            <interceptor-stack name="plcbus">
+                <interceptor-ref name="security"/>
+            </interceptor-stack>
+        </interceptors>
+        -->
+        <global-results>
+            <result name="logoutPage">/jsp/error.jsp</result>
+            <result type="json" name="successJSON">
+                <param name="enumAsBean">true</param>
+                <!--<param name="enableGZIP">true</param>-->
+                <param name="root">*</param>
+            </result>
+            <result name="success">/index.jsp</result>
+            <result name="error">/index.jsp</result>
+            <result name="input">/index.jsp</result>
+            <result name="none">/index.jsp</result>
+            <result name="login">/index.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="index"/>
+        </global-exception-mappings>
+    </package>
+
+    <package name="front" namespace="/frontoffice" extends="common-plcbus">
+        <action name="home/*" class="homeAction" method="{1}" >
+            <result name="homeSuccess">/jsp/frontoffice/home.jsp</result>
+        </action>
+
+        <action name="control/*" class="controlAction" method="{1}" >
+            <result name="homeControlSuccess">/jsp/frontoffice/homeControl.jsp</result>
+            <result name="homeFullControlSuccess">/jsp/frontoffice/homeControlFull.jsp</result>
+            <result name="levelControlSuccess">/jsp/frontoffice/homeControlLevel.jsp</result>
+            <result name="reportSuccess">/jsp/frontoffice/report.jsp</result>
+            <result name="configurationSuccess">/jsp/frontoffice/configuration.jsp</result>
+        </action>
+    </package>
+
+    <package name="back" namespace="/backoffice" extends="common-plcbus">
+        <action name="configuration/*" class="configurationAction" method="{1}" >
+            <result name="configurationSuccess">/jsp/backoffice/configuration.jsp</result>
+            <result name="propertyDataSuccess">/jsp/backoffice/propertyData.jsp</result>
+            <result name="programmingSuccess">/jsp/backoffice/programming.jsp</result>
+            <result name="synchronizedSuccess">/jsp/backoffice/synchronized.jsp</result>
+            <result name="synchronizedList">/jsp/backoffice/jspf/synchronizedList.jsp</result>
+            <result name="programmingList">/jsp/backoffice/jspf/programmingList.jsp</result>
+            <result name="deviceDistributionSuccess">/jsp/backoffice/deviceDistribution.jsp</result>
+            <result name="scheduledShutdownDeviceSuccess">/jsp/backoffice/scheduledShutdownDevice.jsp</result>
+            <result name="scheduledShutdownDeviceList">/jsp/backoffice/jspf/scheduledShutdownDeviceList.jsp</result>
+            <result name="movementActionSuccess">/jsp/backoffice/movementAction.jsp</result>
+            <result name="movementActionList">/jsp/backoffice/jspf/movementActionList.jsp</result>
+            <result name="movementActionDetailList">/jsp/backoffice/jspf/movementActionDetailList.jsp</result>
+
+            <result name="temperatureProgrammingSuccess">/jsp/backoffice/temperatureProgramming.jsp</result>
+            <result name="temperatureProgrammingList">/jsp/backoffice/jspf/temperatureProgrammingList.jsp</result>
+        </action>
+
+        <action name="statistics/*" class="statisticsAction" method="{1}" >
+            <result name="statisticsSuccess">/jsp/backoffice/statistics.jsp</result>
+            <result name="reportSuccess">/jsp/backoffice/report.jsp</result>
+            <result name="graphicsSuccess">/jsp/backoffice/graphics.jsp</result>
+
+            <result name="deviceXLS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">statisticsBean.excelStream</param>
+                <param name="bufferSize">1024</param>
+                <param name="contentDisposition">attachment; filename="dispositivos.xlsx"</param>
+            </result>
+            <result name="sectorXLS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">statisticsBean.excelStream</param>
+                <param name="bufferSize">1024</param>
+                <param name="contentDisposition">attachment; filename="zonas.xlsx"</param>
+            </result>
+            <result name="levelXLS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">statisticsBean.excelStream</param>
+                <param name="bufferSize">1024</param>
+                <param name="contentDisposition">attachment; filename="level.xlsx"</param>
+            </result>
+            <result name="eventXLS" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">statisticsBean.excelStream</param>
+                <param name="bufferSize">1024</param>
+                <param name="contentDisposition">attachment; filename="eventos.xlsx"</param>
+            </result>
+        </action>
+
+        <action name="maintainer/*" class="maintainerAction" method="{1}" >
+            <result name="deviceSuccess">/jsp/backoffice/maintainer/device.jsp</result>
+            <result name="deviceList">/jsp/backoffice/maintainer/jspf/deviceList.jsp</result>
+            <result name="levelSuccess">/jsp/backoffice/maintainer/level.jsp</result>
+            <result name="levelList">/jsp/backoffice/maintainer/jspf/levelList.jsp</result>
+            <result name="sectorSuccess">/jsp/backoffice/maintainer/sector.jsp</result>
+            <result name="sectorList">/jsp/backoffice/maintainer/jspf/sectorList.jsp</result>
+            <result name="mapSuccess">/jsp/backoffice/maintainer/map.jsp</result>
+        </action>
+
+        <action name="administration/*" class="administrationAction" method="{1}" >
+            <result name="cameraSuccess">/jsp/backoffice/administration/camera.jsp</result>
+        </action>
+    </package>
+</struts>
