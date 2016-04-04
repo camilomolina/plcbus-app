@@ -26,6 +26,7 @@ public class HomeAction extends BaseAction {
     private String HOME_CONTROL_SUCCESS = "homeControlSuccess";
     private String CONFIGURATION_SUCCESS = "configurationSuccess";
     private String REPORT_SUCCESS = "reportSuccess";
+    private String HOME_SUCCESS = "homeSuccess";
 
     private HomeBean homeBean = new HomeBean();
 
@@ -81,9 +82,14 @@ public class HomeAction extends BaseAction {
         homeBean.setRestatCount(restatCount);
         homeBean.setAlertedDevice(alertedDevice);
 
-        return SUCCESS;
+        return HOME_SUCCESS;
     }
 
+    public String logout() throws Exception {
+        httpRequest.getSession().invalidate();
+
+        return LOGIN;
+    }
 
     public HomeBean getHomeBean() {
         return homeBean;

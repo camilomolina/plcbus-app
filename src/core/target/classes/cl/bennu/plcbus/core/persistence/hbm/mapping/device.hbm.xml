@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="cl.bennu.plcbus.common.domain.Device" table="dispositivo" lazy="false">
+
+        <id name="id" column="dpst_id">
+            <generator class="native"/>
+        </id>
+        <property name="code" column="dpst_codigo"/>
+        <property name="name" column="dpst_nombre"/>
+        <property name="desc" column="dpst_descripcion"/>
+        <property name="active" column="dpst_activo"/>
+        <property name="status" column="dpst_estado"/>
+        <property name="noize" column="dpst_nivel_ruido"/>
+        <property name="signal" column="dpst_nivel_senhal"/>
+
+        <property name="creatorUser" column="dpst_usuario_creador" />
+        <property name="create" column="dpst_fecha_creacion"/>
+        <property name="updateUser" column="dpst_usuario_actualizador"/>
+        <property name="update" column="dpst_fecha_actualizacion"/>
+        <many-to-one name="sector" column="zona_id" not-null="true" fetch="join" lazy="false" cascade="none" />
+        <property name="deviceTypeEnum" column="tpdp_id" type="deviceTypeEnum"/>
+        <property name="lastPower" column="dpst_ultimo_encendido" />
+        <property name="alarmed" column="dpst_alarmado" />
+        <property name="delay" column="dpst_retardo" />
+        <property name="dimmer" column="dpst_dimmer" />
+        <!-- one to one -->
+        <one-to-one name="camera" class="cl.bennu.plcbus.common.domain.Camera" cascade="none" fetch="select" />
+    </class>
+
+</hibernate-mapping>

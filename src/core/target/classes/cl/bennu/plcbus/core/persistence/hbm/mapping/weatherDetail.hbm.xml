@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="cl.bennu.plcbus.common.domain.weather.WeatherDetail" table="proyeccion_clima" lazy="false">
+        <id name="id" column="pjcm_id">
+            <generator class="native"/>
+        </id>
+        <property name="weatherYahooEnum" column="tpcm_id" type="weatherYahooTypeEnum"/>
+        <many-to-one name="weather" column="clma_id" not-null="true" fetch="join" update="false" cascade="none"/>
+        <property name="low" column="pjcm_temperatura_minima"/>
+        <property name="high" column="pjcm_temperatura_maxima"/>
+        <property name="date" column="pjcm_fecha"/>
+    </class>
+
+
+</hibernate-mapping>

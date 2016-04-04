@@ -1,0 +1,360 @@
+.audio_false {
+    background: url('/plcbus/images/icon/audio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.audio_true {
+    background: url('/plcbus/images/icon/audio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.audio_m_del {
+    background: url('/plcbus/images/icon/audio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.audio_alert {
+    background: url('/plcbus/images/icon/audio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.charger_false {
+    background: url('/plcbus/images/icon/charger.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.charger_true {
+    background: url('/plcbus/images/icon/charger.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.charger_m_del {
+    background: url('/plcbus/images/icon/charger.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.charger_alert {
+    background: url('/plcbus/images/icon/charger.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.diffuser_false {
+    background: url('/plcbus/images/icon/diffuser.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.diffuser_true {
+    background: url('/plcbus/images/icon/diffuser.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.diffuser_m_del {
+    background: url('/plcbus/images/icon/diffuser.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.diffuser_alert {
+    background: url('/plcbus/images/icon/diffuser.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.dimmer_false {
+    background: url('/plcbus/images/icon/dimmer.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.dimmer_true {
+    background: url('/plcbus/images/icon/dimmer.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.dimmer_m_del {
+    background: url('/plcbus/images/icon/dimmer.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.dimmer_alert {
+    background: url('/plcbus/images/icon/dimmer.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.dvd_false {
+    background: url('/plcbus/images/icon/dvd.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.dvd_true {
+    background: url('/plcbus/images/icon/dvd.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.dvd_m_del {
+    background: url('/plcbus/images/icon/dvd.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.dvd_alert {
+    background: url('/plcbus/images/icon/dvd.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.electric_outlet_2_false {
+    background: url('/plcbus/images/icon/electric_outlet_hf.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.electric_outlet_2_true {
+    background: url('/plcbus/images/icon/electric_outlet_hf.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.electric_outlet_2_m_del {
+    background: url('/plcbus/images/icon/electric_outlet_hf.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.electric_outlet_2_alert {
+    background: url('/plcbus/images/icon/electric_outlet_hf.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.electric_outlet_false {
+    background: url('/plcbus/images/icon/electric_outlet.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.electric_outlet_true {
+    background: url('/plcbus/images/icon/electric_outlet.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.electric_outlet_m_del {
+    background: url('/plcbus/images/icon/electric_outlet.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.electric_outlet_alert {
+    background: url('/plcbus/images/icon/electric_outlet.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.fan_false {
+    background: url('/plcbus/images/icon/fan.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.fan_true {
+    background: url('/plcbus/images/icon/fan.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.fan_m_del {
+    background: url('/plcbus/images/icon/fan.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.fan_alert {
+    background: url('/plcbus/images/icon/fan.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.filament_false {
+    background: url('/plcbus/images/icon/filament.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.filament_true {
+    background: url('/plcbus/images/icon/filament.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.filament_m_del {
+    background: url('/plcbus/images/icon/filament.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.filament_alert {
+    background: url('/plcbus/images/icon/filament.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.fluorescent_false {
+    background: url('/plcbus/images/icon/fluorescent.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.fluorescent_true {
+    background: url('/plcbus/images/icon/fluorescent.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.fluorescent_m_del {
+    background: url('/plcbus/images/icon/fluorescent.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.fluorescent_alert {
+    background: url('/plcbus/images/icon/fluorescent.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.halogen_false {
+    background: url('/plcbus/images/icon/halogen.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.halogen_true {
+    background: url('/plcbus/images/icon/halogen.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.halogen_m_del {
+    background: url('/plcbus/images/icon/halogen.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.halogen_alert {
+    background: url('/plcbus/images/icon/halogen.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.ip_false {
+    background: url('/plcbus/images/icon/ip.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.ip_true {
+    background: url('/plcbus/images/icon/ip.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.ip_m_del {
+    background: url('/plcbus/images/icon/ip.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.ip_alert {
+    background: url('/plcbus/images/icon/ip.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.lamp_false {
+    background: url('/plcbus/images/icon/lamp.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.lamp_true {
+    background: url('/plcbus/images/icon/lamp.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.lamp_m_del {
+    background: url('/plcbus/images/icon/lamp.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.lamp_alert {
+    background: url('/plcbus/images/icon/lamp.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.led_false {
+    background: url('/plcbus/images/icon/led.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.led_true {
+    background: url('/plcbus/images/icon/led.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.led_m_del {
+    background: url('/plcbus/images/icon/led.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.led_alert {
+    background: url('/plcbus/images/icon/led.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.low_false {
+    background: url('/plcbus/images/icon/low.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.low_true {
+    background: url('/plcbus/images/icon/low.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.low_m_del {
+    background: url('/plcbus/images/icon/low.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.low_alert {
+    background: url('/plcbus/images/icon/low.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.metallic_false {
+    background: url('/plcbus/images/icon/metallic.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.metallic_true {
+    background: url('/plcbus/images/icon/metallic.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.metallic_m_del {
+    background: url('/plcbus/images/icon/metallic.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.metallic_alert {
+    background: url('/plcbus/images/icon/metallic.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.micro_sprinkler_false {
+    background: url('/plcbus/images/icon/micro_sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.micro_sprinkler_true {
+    background: url('/plcbus/images/icon/micro_sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.micro_sprinkler_m_del {
+    background: url('/plcbus/images/icon/micro_sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.micro_sprinkler_alert {
+    background: url('/plcbus/images/icon/micro_sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.movement_2_false {
+    background: url('/plcbus/images/icon/movement1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.movement_2_true {
+    background: url('/plcbus/images/icon/movement1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.movement_2_m_del {
+    background: url('/plcbus/images/icon/movement1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.movement_2_alert {
+    background: url('/plcbus/images/icon/movement1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.movement_false {
+    background: url('/plcbus/images/icon/movement.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.movement_true {
+    background: url('/plcbus/images/icon/movement.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.movement_m_del {
+    background: url('/plcbus/images/icon/movement.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.movement_alert {
+    background: url('/plcbus/images/icon/movement.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.proximity_false {
+    background: url('/plcbus/images/icon/proximity.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.proximity_true {
+    background: url('/plcbus/images/icon/proximity.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.proximity_m_del {
+    background: url('/plcbus/images/icon/proximity.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.proximity_alert {
+    background: url('/plcbus/images/icon/proximity.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.radio_false {
+    background: url('/plcbus/images/icon/radio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.radio_true {
+    background: url('/plcbus/images/icon/radio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.radio_m_del {
+    background: url('/plcbus/images/icon/radio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.radio_alert {
+    background: url('/plcbus/images/icon/radio.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.roller_false {
+    background: url('/plcbus/images/icon/roller.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.roller_true {
+    background: url('/plcbus/images/icon/roller.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.roller_m_del {
+    background: url('/plcbus/images/icon/roller.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.roller_alert {
+    background: url('/plcbus/images/icon/roller.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.router_false {
+    background: url('/plcbus/images/icon/router.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.router_true {
+    background: url('/plcbus/images/icon/router.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.router_m_del {
+    background: url('/plcbus/images/icon/router.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.router_alert {
+    background: url('/plcbus/images/icon/router.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.smoke_false {
+    background: url('/plcbus/images/icon/smoke.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.smoke_true {
+    background: url('/plcbus/images/icon/smoke.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.smoke_m_del {
+    background: url('/plcbus/images/icon/smoke.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.smoke_alert {
+    background: url('/plcbus/images/icon/smoke.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.sprinkler_false {
+    background: url('/plcbus/images/icon/sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.sprinkler_true {
+    background: url('/plcbus/images/icon/sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.sprinkler_m_del {
+    background: url('/plcbus/images/icon/sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.sprinkler_alert {
+    background: url('/plcbus/images/icon/sprinkler.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.temperature_false {
+    background: url('/plcbus/images/icon/temperature.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.temperature_true {
+    background: url('/plcbus/images/icon/temperature.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.temperature_m_del {
+    background: url('/plcbus/images/icon/temperature.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.temperature_alert {
+    background: url('/plcbus/images/icon/temperature.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.tv_false {
+    background: url('/plcbus/images/icon/tv.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.tv_true {
+    background: url('/plcbus/images/icon/tv.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.tv_m_del {
+    background: url('/plcbus/images/icon/tv.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.tv_alert {
+    background: url('/plcbus/images/icon/tv.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.underground_false {
+    background: url('/plcbus/images/icon/underground.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.underground_true {
+    background: url('/plcbus/images/icon/underground.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.underground_m_del {
+    background: url('/plcbus/images/icon/underground.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.underground_alert {
+    background: url('/plcbus/images/icon/underground.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.warm_bed_false {
+    background: url('/plcbus/images/icon/warm_bed.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.warm_bed_true {
+    background: url('/plcbus/images/icon/warm_bed.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.warm_bed_m_del {
+    background: url('/plcbus/images/icon/warm_bed.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.warm_bed_alert {
+    background: url('/plcbus/images/icon/warm_bed.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}
+.ir_false {
+    background: url('/plcbus/images/icon/smoke1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: 0px 0;cursor: pointer;
+}
+.ir_true {
+    background: url('/plcbus/images/icon/smoke1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -34px 0;cursor: pointer;
+}
+.ir_m_del {
+    background: url('/plcbus/images/icon/smoke1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -68px 0;cursor: pointer;
+}
+.ir_alert {
+    background: url('/plcbus/images/icon/smoke1.png') no-repeat;width: 34px;height: 34px;position:relative;background-position: -102px 0;cursor: pointer;
+}

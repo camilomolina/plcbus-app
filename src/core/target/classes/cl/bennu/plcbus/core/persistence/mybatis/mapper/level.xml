@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Level">
+
+    <resultMap id="levelResult" type="cl.bennu.plcbus.common.domain.Level" >
+        <id property="id" column="nvel_id" />
+        <result property="name" column="nvel_nombre"/>
+        <result property="active" column="nvel_activo"/>
+        <result property="creatorUser" column="nvel_usuario_creador"/>
+        <result property="create" column="nvel_fecha_creacion"/>
+        <result property="updateUser" column="nvel_usuario_actualizador"/>
+        <result property="update" column="nvel_fecha_actualizacion"/>
+    </resultMap>
+
+    <sql id="selectLevel">
+      select nvel_id
+          , nvel_nombre
+          , nvel_activo
+          , nvel_usuario_creador
+          , nvel_fecha_creacion
+          , nvel_usuario_actualizador
+          , nvel_fecha_actualizacion
+      from nivel nvel
+    </sql>
+
+    <select id="getAllLevel" resultMap="levelResult">
+        <include refid="selectLevel"/>
+    </select>
+
+    <select id="getAllLevelActive" resultMap="levelResult">
+        <include refid="selectLevel"/>
+    </select>
+
+</mapper>
