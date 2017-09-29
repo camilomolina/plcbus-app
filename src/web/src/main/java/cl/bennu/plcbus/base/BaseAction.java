@@ -26,6 +26,7 @@ import java.util.Map;
  */
 public abstract class BaseAction extends ActionSupport implements SessionAware, Preparable, ServletRequestAware, ServletResponseAware {
 
+
     private IControlService controlService;
     protected Map<String, Object> sessionMap;
     protected HttpServletRequest httpRequest;
@@ -61,7 +62,12 @@ public abstract class BaseAction extends ActionSupport implements SessionAware, 
 
     public ContextDTO getContext() {
         ContextDTO contextDTO = new ContextDTO();
-        contextDTO.setUser("cmolina");
+        if (httpRequest.getUserPrincipal() == null) {
+            contextDTO.setUser("plcbus");
+        } else {
+            contextDTO.setUser(httpRequest.getUserPrincipal().getName());
+        }
+
         contextDTO.setHost(httpRequest.getRemoteHost());
         contextDTO.setSessionId(httpRequest.getSession().getId());
         return contextDTO;
@@ -99,4 +105,7 @@ public abstract class BaseAction extends ActionSupport implements SessionAware, 
     public Weather getWeather() {
         return (Weather) httpSession.getAttribute(Constant.WEATHER);
     }
+
+
+
 }

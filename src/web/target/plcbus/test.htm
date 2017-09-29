@@ -1,0 +1,1308 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="PLCBus">
+    <meta name="author" content="bennu">
+    <meta name="keywords" content="plcbus">
+
+    <link href="css/modern.css" rel="stylesheet">
+    <link href="css/modern-responsive.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" type="text/css">
+
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/moment_langs.js"></script>
+
+
+    <script type="text/javascript" src="js/modern/dropdown.js"></script>
+    <script type="text/javascript" src="js/modern/accordion.js"></script>
+    <script type="text/javascript" src="js/modern/buttonset.js"></script>
+    <script type="text/javascript" src="js/modern/carousel.js"></script>
+    <script type="text/javascript" src="js/modern/input-control.js"></script>
+    <script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+    <script type="text/javascript" src="js/modern/rating.js"></script>
+    <script type="text/javascript" src="js/modern/slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-drag.js"></script>
+    <script type="text/javascript" src="js/modern/calendar.js"></script>
+    <script type="text/javascript" src="js/modern/dialog.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="text/javascript" src="js/common/generic.js"></script>
+    <script type="text/javascript" src="js/backoffice/programming.js"></script>
+
+    <title>PLCBus</title>
+
+</head>
+<body class="metrouicss">
+<form action="backoffice/configuration/startProgramming.do" id="homeControlId">
+    
+
+
+
+<div class="page">
+    <div class="nav-bar">
+        <div class="nav-bar-inner padding10">
+            <span class="pull-menu"></span>
+
+            <a href="frontoffice/home/start.do">
+                <span class="element brand">
+                    <img class="place-left" src="images/metro/logo32.png" style="height: 20px"/>
+                    PLCBus <small>0.1v</small>
+                </span>
+            </a>
+
+            <div class="divider"></div>
+
+            <ul class="menu">
+                <li><a href="frontoffice/home/start.do">Home</a></li>
+                <li data-role="dropdown">
+                    <a href="#">Controles</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="frontoffice/control/startTableControl.do">Tabla Completa</a></li>
+                        <li class="divider"></li>
+                        
+                            <li><a href="frontoffice/control/startControl.do?controlBean.levelId=1">Primer Piso</a></li>
+                        
+                            <li><a href="frontoffice/control/startControl.do?controlBean.levelId=2">Segundo Piso</a></li>
+                        
+                            <li><a href="frontoffice/control/startControl.do?controlBean.levelId=4">2</a></li>
+                        
+                    </ul>
+                </li>
+                <li data-role="dropdown">
+                    <a href="#">Estadistica</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="backoffice/statistics/startGraphics.do">Graficos</a></li>
+                        <li><a href="backoffice/statistics/startReport.do">Reportes</a></li>
+                    </ul>
+                </li>
+                <li data-role="dropdown"><a href="#">Configuraci&oacute;n</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="backoffice/configuration/startPropertyData.do">Propiedad</a></li>
+                        <li class="divider"></li>
+                        <li><a href="backoffice/configuration/startProgramming.do">Programaci&oacute;n</a></li>
+                        <li><a href="backoffice/configuration/startScheduledShutdownDevice.do">Apagado Programado</a></li>
+                        <li><a href="backoffice/configuration/startSynchronized.do">Sinronizaci&oacute;n</a></li>
+                        <li class="divider"></li>
+                        <li><a>Distribucion</a></li>
+                        
+                            <li><a href="backoffice/configuration/startLightDistribution.do?deviceDistributionBean.levelId=1">Primer Piso</a></li>
+                        
+                            <li><a href="backoffice/configuration/startLightDistribution.do?deviceDistributionBean.levelId=2">Segundo Piso</a></li>
+                        
+                            <li><a href="backoffice/configuration/startLightDistribution.do?deviceDistributionBean.levelId=4">2</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="backoffice/maintainer/startDevice.do">Dispositivos</a></li>
+                        <li><a href="backoffice/maintainer/startMap.do">Mapas</a></li>
+                        <li><a href="backoffice/maintainer/startSector.do">Zonas</a></li>
+                        <li><a href="backoffice/maintainer/startLevel.do">Niveles</a></li>
+                        <li class="divider"></li>
+                        <li><a href="backoffice/maintainer/start.do">Usuarios</a></li>
+                        <li><a href="backoffice/maintainer/startPassChange.do">Cambio de clave</a></li>
+                    </ul>
+                </li>
+                <li data-role="dropdown"><a href="#">Ayuda</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jsp/frontoffice/use.jsp">Uso</a></li>
+                        <li><a href="jsp/frontoffice/contact.jsp">Contactar</a></li>
+                        <li><a href="jsp/frontoffice/update.jsp">Actualizaciones</a></li>
+                        <li><a href="jsp/frontoffice/version.jsp">Versi&oacute;n</a></li>
+                        <li class="divider"></li>
+                        <li><a href="jsp/frontoffice/about.jsp">Acerca</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+    <div class="page secondary">
+        <div class="page-header">
+            <div class="page-header-content">
+                <h1>Configuraci&oacute;n
+                    <small>programaci&oacute;n</small>
+                </h1>
+                <a href="backoffice/configuration/startConfiguration.do" class="back-button big page-back"></a>
+            </div>
+        </div>
+
+        <input type="hidden" id="programmingId" name="configurationBean.programmingId" />
+
+        <div class="page-region">
+            <div class="page-region-content">
+
+                <div class="page-control" data-role="page-control">
+
+                    <div class="dialog" id="updateCalendarSpan" style="display: ;position:absolute;top:30%;left:30%;background-color:rgba(255, 255, 255, 255);">
+                        <div class="header"><span>Actualizar calendario</span>
+                            <div><button type="button" onclick="$('#updateCalendarSpan').hide();"><i class="icon-cancel-2"></i></button></div>
+                        </div>
+							
+							<div class="span2">
+							<div class="input-control select">
+                                                        <select name="configurationBean.programmingSummary.timeSummary.startHourEnum" id="startHourEnum">
+    <option value="1">00</option>
+    <option value="2">01</option>
+    <option value="3">02</option>
+    <option value="4">03</option>
+    <option value="5">04</option>
+    <option value="6">05</option>
+    <option value="7">06</option>
+    <option value="8">07</option>
+    <option value="9">08</option>
+    <option value="10">09</option>
+    <option value="11">10</option>
+    <option value="12">11</option>
+    <option value="13">12</option>
+    <option value="14">13</option>
+    <option value="15">14</option>
+    <option value="16">15</option>
+    <option value="17">16</option>
+    <option value="18">17</option>
+    <option value="19">18</option>
+    <option value="20">19</option>
+    <option value="21">20</option>
+    <option value="22">21</option>
+    <option value="23">22</option>
+    <option value="24">23</option>
+
+
+</select>
+
+                                               
+                                                        <select name="configurationBean.programmingSummary.timeSummary.startHourEnum" id="startHourEnum">
+    <option value="1">00</option>
+    <option value="2">01</option>
+    <option value="3">02</option>
+    <option value="4">03</option>
+    <option value="5">04</option>
+    <option value="6">05</option>
+    <option value="7">06</option>
+    <option value="8">07</option>
+    <option value="9">08</option>
+    <option value="10">09</option>
+    <option value="11">10</option>
+    <option value="12">11</option>
+    <option value="13">12</option>
+    <option value="14">13</option>
+    <option value="15">14</option>
+    <option value="16">15</option>
+    <option value="17">16</option>
+    <option value="18">17</option>
+    <option value="19">18</option>
+    <option value="20">19</option>
+    <option value="21">20</option>
+    <option value="22">21</option>
+    <option value="23">22</option>
+    <option value="24">23</option>
+
+
+</select>
+
+                                                    </div>
+													
+													
+													  </div>
+
+                            <br/>
+
+							
+
+                            <input type="button" value="Volver" class="bg-color-orange place-right">
+                            <input type="button" value="Guardar" class="standart default place-right" onclick="Programming.updateCalendar();" >
+
+                            <br/>
+                            <br/>
+                      
+                    </div>
+
+
+                    <span class="menu-pull"></span>
+                    <div class="menu-pull-bar"></div>
+
+                    <ul>
+                        <li class="active"><a href="#programmongTable">Nueva programacion</a></li>
+                        <li><a href="#programming">Programaciones activas</a></li>
+                    </ul>
+
+                    <div class="frames">
+                        <div class="frame active" id="programmongTable">
+                            <div class="grid">
+                                <div class="span8">
+                                    <fieldset>
+                                        <legend>Programaci&oacute;n</legend>
+
+                                        <div class="row">
+                                            <div class="span8">
+                                                <label class="input-control radio" onclick="Programming.checkDayDiv();">
+                                                    <input type="radio" value="1" name="configurationBean.programmingSummary.programmingTypeEnum" checked>
+                                                    <span class="helper">Diaria</span>
+                                                </label>
+                                                <label class="input-control radio" onclick="Programming.checkDayDiv();">
+                                                    <input type="radio" value="2" name="configurationBean.programmingSummary.programmingTypeEnum" >
+                                                    <span class="helper">Semanal</span>
+                                                </label>
+                                                <label class="input-control radio" onclick="Programming.checkDayDiv();">
+                                                    <input type="radio" value="3" name="configurationBean.programmingSummary.programmingTypeEnum" disabled>
+                                                    <span class="helper">Mensual</span>
+                                                </label>
+                                                <label class="input-control radio" onclick="Programming.checkDayDiv();">
+                                                    <input type="radio" value="4" name="configurationBean.programmingSummary.programmingTypeEnum" disabled>
+                                                    <span class="helper">Anual</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="row">
+                                            <!--<p class="tertiary-info-secondary-text">Se programara de forma diaria entre los horarios</p>-->
+                                            <div class="span4">
+                                                <p class="tertiary-info-secondary-text">Dispositivo</p>
+                                                <div class="input-control select">
+                                                    <select name="configurationBean.programmingSummary.deviceId" id="deviceId">
+    <option value="-1"
+    >Seleccione dispositivo</option>
+    <option value="53">B9 - Balcon</option>
+    <option value="78">D10 - D10</option>
+    <option value="75">D7 - Patio Trasero</option>
+    <option value="76">D8 - Enchufe Atras</option>
+    <option value="77">D9 - Atras</option>
+    <option value="92">E11 - Persiana Balcon</option>
+    <option value="68">D3 - Ba�o 1</option>
+    <option value="69">D4 - Ba�o 2</option>
+    <option value="6">A6 - Enchufe Cocina</option>
+    <option value="8">A8 - Cocina</option>
+    <option value="1">A1 - Living1</option>
+    <option value="95">A11 - A11</option>
+    <option value="2">A2 - Living2</option>
+    <option value="17">B7 - Sala TV</option>
+    <option value="18">B8 - Enchufe Sala TV</option>
+    <option value="93">F3 - F3</option>
+    <option value="94">F4 - F4</option>
+    <option value="96">F5 - F5</option>
+    <option value="64">C10 - Pasillo Atras 2</option>
+    <option value="59">C5 - Biblioteca</option>
+    <option value="61">C7 - Ba�o Tania</option>
+    <option value="62">C8 - Pieza Tania</option>
+    <option value="63">C9 - Pasillo Atras 1</option>
+    <option value="54">B10 - Pasillo</option>
+    <option value="57">C3 - Pieza Camilo 1</option>
+    <option value="58">C4 - Pieza Camilo 2</option>
+    <option value="89">E10 - Persiana Escalera</option>
+    <option value="97">F7 - 222222</option>
+    <option value="10">A10 - Riego Sector Veh�culos </option>
+    <option value="9">A9 - Patio Lateral Vehiculos</option>
+    <option value="86">E3 - Riego Sector Cocina</option>
+    <option value="5">A5 - Cocina Exterior</option>
+    <option value="16">B6 - Patrio Trasero</option>
+    <option value="3">A3 - Frontis</option>
+    <option value="90">F1 - Riego Frontis</option>
+    <option value="91">F2 - F2</option>
+    <option value="65">C11 - Enchufe 1</option>
+    <option value="72">D11 - Enchufe 2 - Calienta Cama</option>
+    <option value="88">E9 - Persiana Pieza Camilo</option>
+    <option value="55">C1 - Enchufe Escalera</option>
+    <option value="56">C2 - Escalera</option>
+    <option value="67">D1 - Pieza Tareas Tania</option>
+    <option value="66">D2 - Pieza Trabajo Camilo</option>
+    <option value="7">A7 - Pasillo 1� Piso</option>
+    <option value="11">B1 - Pool</option>
+    <option value="13">B3 - Ducha</option>
+    <option value="14">B4 - Planzador</option>
+    <option value="84">E1 - xBox</option>
+    <option value="85">E2 - Enchufe Router</option>
+
+
+</select>
+
+                                                </div>
+                                            </div>
+                                            <div class="span2">
+                                                <p class="tertiary-info-secondary-text">Desde</p>
+                                                <div class="span1">
+                                                    <div class="input-control select">
+                                                        <select name="configurationBean.programmingSummary.timeSummary.startHourEnum" id="startHourEnum">
+    <option value="1">00</option>
+    <option value="2">01</option>
+    <option value="3">02</option>
+    <option value="4">03</option>
+    <option value="5">04</option>
+    <option value="6">05</option>
+    <option value="7">06</option>
+    <option value="8">07</option>
+    <option value="9">08</option>
+    <option value="10">09</option>
+    <option value="11">10</option>
+    <option value="12">11</option>
+    <option value="13">12</option>
+    <option value="14">13</option>
+    <option value="15">14</option>
+    <option value="16">15</option>
+    <option value="17">16</option>
+    <option value="18">17</option>
+    <option value="19">18</option>
+    <option value="20">19</option>
+    <option value="21">20</option>
+    <option value="22">21</option>
+    <option value="23">22</option>
+    <option value="24">23</option>
+
+
+</select>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="span1">
+                                                    <div class="input-control select">
+                                                        <select name="configurationBean.programmingSummary.timeSummary.startMinuteEnum" id="startMinuteEnum">
+    <option value="1">00</option>
+    <option value="2">05</option>
+    <option value="3">10</option>
+    <option value="4">15</option>
+    <option value="5">20</option>
+    <option value="6">25</option>
+    <option value="7">30</option>
+    <option value="8">35</option>
+    <option value="9">40</option>
+    <option value="10">45</option>
+    <option value="11">50</option>
+    <option value="12">55</option>
+
+
+</select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="span2">
+                                                <p class="tertiary-info-secondary-text">Hasta</p>
+                                                <div class="span1">
+                                                    <div class="input-control select">
+                                                        <select name="configurationBean.programmingSummary.timeSummary.endHourEnum" id="endHourEnum">
+    <option value="1">00</option>
+    <option value="2">01</option>
+    <option value="3">02</option>
+    <option value="4">03</option>
+    <option value="5">04</option>
+    <option value="6">05</option>
+    <option value="7">06</option>
+    <option value="8">07</option>
+    <option value="9">08</option>
+    <option value="10">09</option>
+    <option value="11">10</option>
+    <option value="12">11</option>
+    <option value="13">12</option>
+    <option value="14">13</option>
+    <option value="15">14</option>
+    <option value="16">15</option>
+    <option value="17">16</option>
+    <option value="18">17</option>
+    <option value="19">18</option>
+    <option value="20">19</option>
+    <option value="21">20</option>
+    <option value="22">21</option>
+    <option value="23">22</option>
+    <option value="24">23</option>
+
+
+</select>
+
+                                                    </div>
+                                                </div>
+                                                <div class="span1">
+                                                    <div class="input-control select">
+                                                        <select name="configurationBean.programmingSummary.timeSummary.endMinuteEnum" id="endMinuteEnum">
+    <option value="1">00</option>
+    <option value="2">05</option>
+    <option value="3">10</option>
+    <option value="4">15</option>
+    <option value="5">20</option>
+    <option value="6">25</option>
+    <option value="7">30</option>
+    <option value="8">35</option>
+    <option value="9">40</option>
+    <option value="10">45</option>
+    <option value="11">50</option>
+    <option value="12">55</option>
+
+
+</select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="dayDiv">
+                                            <div class="span8">
+                                                <p class="tertiary-info-secondary-text">Dias</p>
+                                                
+                                                    <label class="input-control checkbox" onclick="">
+                                                        <input type="checkbox" name="configurationBean.programmingSummary.dayLists" value="1"/>
+                                                        <span class="helper">Lunes</span>
+                                                    </label>
+                                                
+                                                    <label class="input-control checkbox" onclick="">
+                                                        <input type="checkbox" name="configurationBean.programmingSummary.dayLists" value="2"/>
+                                                        <span class="helper">Martes</span>
+                                                    </label>
+                                                
+                                                    <label class="input-control checkbox" onclick="">
+                                                        <input type="checkbox" name="configurationBean.programmingSummary.dayLists" value="3"/>
+                                                        <span class="helper">Miercoles</span>
+                                                    </label>
+                                                
+                                                    <label class="input-control checkbox" onclick="">
+                                                        <input type="checkbox" name="configurationBean.programmingSummary.dayLists" value="4"/>
+                                                        <span class="helper">Jueves</span>
+                                                    </label>
+                                                
+                                                    <label class="input-control checkbox" onclick="">
+                                                        <input type="checkbox" name="configurationBean.programmingSummary.dayLists" value="5"/>
+                                                        <span class="helper">Viernes</span>
+                                                    </label>
+                                                
+                                                    <label class="input-control checkbox" onclick="">
+                                                        <input type="checkbox" name="configurationBean.programmingSummary.dayLists" value="6"/>
+                                                        <span class="helper">Sabado</span>
+                                                    </label>
+                                                
+                                                    <label class="input-control checkbox" onclick="">
+                                                        <input type="checkbox" name="configurationBean.programmingSummary.dayLists" value="7"/>
+                                                        <span class="helper">Domingo</span>
+                                                    </label>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="span8">
+                                                <p class="tertiary-info-secondary-text">Motivo</p>
+                                                <div class="input-control textarea">
+                                                    <textarea name="configurationBean.programmingSummary.reason" id="reason" placeholder="Escriba el motivo de la programacion..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="span8">
+                                                <input type="button" value="Cancelar" >
+                                                <input type="button" value="Volver" class="bg-color-orange place-right">
+                                                <input type="button" value="Guardar" class="standart default place-right" onclick="Programming.save();" >
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame" id="programming">
+                            <div id="programmingListFrame">
+                                
+
+
+
+<div class="span8">
+
+    <table class="striped">
+        <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Detalle</th>
+            <th class="center">Eliminar</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            <tr>
+                <td>C4</td>
+                <td>Pieza Camilo 2</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Sabado
+                            08:30-10:00
+                            <br/>
+                        
+                            Domingo
+                            08:30-10:00
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(28, 'Pieza Camilo 2');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(28, 'Pieza Camilo 2');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>C3</td>
+                <td>Pieza Camilo 1</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Sabado
+                            08:30-10:00
+                            <br/>
+                        
+                            Domingo
+                            08:30-10:00
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(30, 'Pieza Camilo 1');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(30, 'Pieza Camilo 1');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A8</td>
+                <td>Cocina</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                17:00-03:15
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(35, 'Cocina');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(35, 'Cocina');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>C4</td>
+                <td>Pieza Camilo 2</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                19:30-01:10
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(36, 'Pieza Camilo 2');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(36, 'Pieza Camilo 2');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A1</td>
+                <td>Living1</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                06:35-08:00
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(37, 'Living1');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(37, 'Living1');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A2</td>
+                <td>Living2</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                06:35-08:00
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(38, 'Living2');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(38, 'Living2');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>C2</td>
+                <td>Escalera</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                06:30-10:00
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(39, 'Escalera');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(39, 'Escalera');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>C3</td>
+                <td>Pieza Camilo 1</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                19:30-01:10
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(42, 'Pieza Camilo 1');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(42, 'Pieza Camilo 1');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>C7</td>
+                <td>Ba&ntilde;o Tania</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                21:00-02:00
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(50, 'Ba&ntilde;o Tania');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(50, 'Ba&ntilde;o Tania');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>C2</td>
+                <td>Escalera</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                20:30-01:05
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(52, 'Escalera');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(52, 'Escalera');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A3</td>
+                <td>Frontis</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                21:00-01:45
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(53, 'Frontis');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(53, 'Frontis');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A1</td>
+                <td>Living1</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                20:00-01:00
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(59, 'Living1');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(59, 'Living1');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A2</td>
+                <td>Living2</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                20:00-01:00
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(60, 'Living2');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(60, 'Living2');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A10</td>
+                <td>Riego Sector Veh&iacute;culos </td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Lunes
+                            06:00-06:10
+                            <br/>
+                        
+                            Miercoles
+                            06:00-06:10
+                            <br/>
+                        
+                            Viernes
+                            06:00-06:10
+                            <br/>
+                        
+                            Domingo
+                            06:00-06:10
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(61, 'Riego Sector Veh&iacute;culos ');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(61, 'Riego Sector Veh&iacute;culos ');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>E3</td>
+                <td>Riego Sector Cocina</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Lunes
+                            06:15-06:25
+                            <br/>
+                        
+                            Miercoles
+                            06:15-06:25
+                            <br/>
+                        
+                            Viernes
+                            06:15-06:25
+                            <br/>
+                        
+                            Domingo
+                            06:15-06:25
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(64, 'Riego Sector Cocina');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(64, 'Riego Sector Cocina');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>F1</td>
+                <td>Riego Frontis</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Lunes
+                            06:30-06:40
+                            <br/>
+                        
+                            Miercoles
+                            06:30-06:40
+                            <br/>
+                        
+                            Viernes
+                            06:30-06:40
+                            <br/>
+                        
+                            Domingo
+                            06:30-06:40
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(65, 'Riego Frontis');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(65, 'Riego Frontis');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>E11</td>
+                <td>Persiana Balcon</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Lunes
+                            09:00-21:15
+                            <br/>
+                        
+                            Martes
+                            09:00-21:15
+                            <br/>
+                        
+                            Miercoles
+                            09:00-21:15
+                            <br/>
+                        
+                            Jueves
+                            09:00-21:15
+                            <br/>
+                        
+                            Viernes
+                            09:00-21:15
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(83, 'Persiana Balcon');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(83, 'Persiana Balcon');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>E10</td>
+                <td>Persiana Escalera</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Lunes
+                            08:00-21:15
+                            <br/>
+                        
+                            Martes
+                            08:00-21:15
+                            <br/>
+                        
+                            Miercoles
+                            08:00-21:15
+                            <br/>
+                        
+                            Jueves
+                            08:00-21:15
+                            <br/>
+                        
+                            Viernes
+                            08:00-21:15
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(84, 'Persiana Escalera');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(84, 'Persiana Escalera');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>E9</td>
+                <td>Persiana Pieza Camilo</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Lunes
+                            09:00-21:15
+                            <br/>
+                        
+                            Martes
+                            09:00-21:15
+                            <br/>
+                        
+                            Miercoles
+                            09:00-21:15
+                            <br/>
+                        
+                            Jueves
+                            09:00-21:15
+                            <br/>
+                        
+                            Viernes
+                            09:00-21:15
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(85, 'Persiana Pieza Camilo');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(85, 'Persiana Pieza Camilo');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>E11</td>
+                <td>Persiana Balcon</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Sabado
+                            09:30-22:00
+                            <br/>
+                        
+                            Domingo
+                            09:30-22:00
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(87, 'Persiana Balcon');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(87, 'Persiana Balcon');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>E10</td>
+                <td>Persiana Escalera</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Sabado
+                            09:30-22:00
+                            <br/>
+                        
+                            Domingo
+                            09:30-22:00
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(88, 'Persiana Escalera');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(88, 'Persiana Escalera');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>E9</td>
+                <td>Persiana Pieza Camilo</td>
+                <td>Semanal</td>
+                <td>
+                    
+                    
+                        
+                            Sabado
+                            09:30-22:00
+                            <br/>
+                        
+                            Domingo
+                            09:30-22:00
+                            <br/>
+                        
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(89, 'Persiana Pieza Camilo');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(89, 'Persiana Pieza Camilo');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>B9</td>
+                <td>Balcon</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                21:20-01:30
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(90, 'Balcon');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(90, 'Balcon');"></i>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>A3</td>
+                <td>Frontis</td>
+                <td>Diaria</td>
+                <td>
+                    
+                        
+                            
+                                20:30-02:50
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    
+                </td>
+                <td class="center" >
+                    <i class="icon-pencil" style="cursor: pointer;" onclick="Programming.get(91, 'Frontis');"></i>
+                    <i class="icon-remove" style="cursor: pointer;" onclick="Programming.delete(91, 'Frontis');"></i>
+                </td>
+            </tr>
+        
+        </tbody>
+
+        <tfoot></tfoot>
+    </table>
+
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+    <div class="nav-bar">
+        <div class="nav-bar-inner padding10">
+                <span class="element">
+                        2012-2013, PLCBus
+                </span>
+        </div>
+    </div>
+</div>
+
+</form>
+</body>
+</html>

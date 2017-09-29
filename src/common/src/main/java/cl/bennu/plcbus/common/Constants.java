@@ -8,7 +8,7 @@ package cl.bennu.plcbus.common;
  */
 public class Constants {
 
-    public final static Boolean DEVELOMPENT_MODE = true;
+    public final static Boolean DEVELOMPENT_MODE = false;
     public final static String PORT = "COM4";
     //public final static String PORT = "/dev/ttyUSB0";
     public final static int SYNCHRONIZED_DELAY_4_UNIT = 1;
@@ -20,7 +20,7 @@ public class Constants {
     public final static String DATETIME_FORMAT = "dd/MM/yyyy HH:mm:ss";
     public final static int ALERT_HOURS = 3;
     public final static int COST_kWh_CLP = 88;
-    public final static int COST_MAX_CLP = 10000;
+    public final static int COST_MAX_CLP = 5000;
 
     public final static int DEFAULT_WATTS_FILAMENT = 75;
     public final static int DEFAULT_WATTS_HALOGEN = 150;

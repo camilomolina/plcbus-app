@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="cl.bennu.plcbus.common.domain.Programming" table="programacion" lazy="false">
+        <id name="id" column="prgm_id">
+            <generator class="native"/>
+        </id>
+        <many-to-one name="device" column="dpst_id" not-null="true" fetch="join" />
+        <property name="reason" column="prgm_motivo" />
+        <property name="programmingTypeEnum" column="tppg_id" type="programmingTypeEnum"/>
+        <bag name="programmingDetailList" fetch="subselect" lazy="false" inverse="false" cascade="none">
+            <key column="prgm_id" update="false"/>
+            <one-to-many class="cl.bennu.plcbus.common.domain.ProgrammingDetail" />
+        </bag>
+        <property name="active" column="prgm_activo" />
+
+        <property name="temperature" column="prgm_temperatura" />
+        <property name="rangeTypeEnum" column="tprg_id" type="rangeTypeEnum" />
+        <property name="min" column="prgm_min" />
+        <property name="max" column="prgm_max" />
+
+        <property name="creatorUser" column="prgm_usuario_creador"/>
+        <property name="create" column="prgm_fecha_creacion"/>
+        <property name="updateUser" column="prgm_usuario_actualizador"/>
+        <property name="update" column="prgm_fecha_actualizacion"/>
+    </class>
+
+</hibernate-mapping>

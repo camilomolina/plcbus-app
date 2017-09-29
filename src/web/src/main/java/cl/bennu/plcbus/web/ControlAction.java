@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class ControlAction extends BaseAction {
 
-    private String HOME_CONTROL_SUCCESS = "homeControlSuccess";
+    public String HOME_CONTROL_SUCCESS = "homeControlSuccess";
     private String HOME_LEVEL_CONTROL_SUCCESS = "levelControlSuccess";
     private String HOME_FULL_CONTROL_SUCCESS = "homeFullControlSuccess";
     private String CONFIGURATION_SUCCESS = "configurationSuccess";
